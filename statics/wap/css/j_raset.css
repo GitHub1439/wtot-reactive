@@ -1,0 +1,71 @@
+@font-face {font-family: 'iconfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}@font-face {font-family: 'iconfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+@font-face {font-family: 'j_cn_font';
+
+    src: url('../font/cn/j_cn.eot'); /* IE9*/
+
+    src: url('../font/cn/j_cn.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+
+    url('../font/cn/j_cn.woff') format('woff'), /* chrome、firefox */
+
+    url('../font/cn/j_cn.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+
+    url('../font/cn/j_cn.svg#iconfont') format('svg'); /* iOS 4.1- */
+
+}
+ 
+.font_cn{ font-family:"microsoft yahei" ;}
+ .opacity{ -webkit-animation: opacity 0.3s linear;animation: opacity 0.3s linear;}
+@-webkit-keyframes opacity {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes opacity {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.iconfont{ font-family:"iconfont" !important;font-size:16px;font-style:normal;}
+p{ margin: 0; }
+ul,ol{ padding: 0;}
+html,body{ background: #fff; overflow-x: hidden;} 
+.clear{ clear:both;}
+.color{ color:#01479f !important;}
+.t2{ text-indent: 2em;}
+.f12{ font-size: 12px !important;}
+.img_box img{ display:block; margin:0 auto; width:100%;}
+.text_sd{white-space: nowrap;overflow:hidden;text-overflow: ellipsis;}
+.text_box{ font-size:13px; line-height:26px;} 
+.main_box{ position:relative; margin:0 0rem; padding-bottom: 3rem;}
+.no_padding_up{ padding-top: 0 !important;}
+.no_margin{ margin:0 !important}
+.no_padding{ padding:0 !important}
+.no_border{ border: none !important;}
+.am-slider{ box-shadow: none;}
+.margin_auto_1{ margin: auto 1rem;}
+body,html,#header{ background: url(../images/bg_body.jpg) repeat;}
+body{ }
+hr{ margin-top: 0;}
+/*百度播放器美化*/
+#playercontainer_display_button{ background:none !important; height:40px; width:40px !important; border:2px solid #fff; border-radius:50%; padding:0 !important;}
+#playercontainer_display_button #playercontainer_display_button_play{background-size: 25px;}
+#playercontainer_display_button{ height:40px !important; margin-top: -20px !important;}
+#ascrail2000-hr div{ border-radius:0  !important; height:4px !important; top: 1px !important; cursor:pointer;}

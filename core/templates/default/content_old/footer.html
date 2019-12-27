@@ -1,0 +1,43 @@
+<div class="footer">
+    <div class="main_box">
+            <div class="up">
+                <a href="{diy_top_link(54)}" title="">法律声明</a><i>|</i>
+                <a href="{diy_top_link(55)}" title="">隐私安全</a><i>|</i>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=876029888&site=qq&menu=yes" target="_blank" title="">在线客服</a><i>|</i>
+                <a href="{diy_top_link(46)}" title="">联系我们</a><!-- <i>|</i> -->
+        <!--         <a href="" title="" class="bnt_rss">RSS订阅</a> -->
+            </div>
+            <div class="un">
+                {pc:block pos="copyright"}{/pc}  技术支持：<a href="http//:www.fgkj.cc" target="_blank" title="技术支持：凡高科技">凡高科技</a>
+            </div>
+        
+            <div class="slide_up_box">
+                <div class="box">
+                <div class="box" id="slide_up">
+                <div class="list_box slide_height">
+                    <div class="content">
+                  <ul>
+{pc:link  action="type_list" typeid="0" linktype="0" order="listorder DESC" num="8" return="pic_link"}
+{loop $pic_link $v}
+<li>
+    <a href="{$v['url']}" title="{$v['name']}" target="_blank">{$v['name']}</a>
+</li>
+{/loop}
+{/pc}
+
+                  </ul>
+                  
+                 </div>
+                </div>
+                <i class="bnt_slide"></i>
+            </div>
+                </div>
+            </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+<script language="JavaScript" src="{APP_PATH}api.php?op=cnzzip"></script>
+{$allFields[$siteid]['seo_tongji']}   {$allFields[$siteid]['seo_360']} {$allFields[$siteid]['seo_baidu']}
+</body>
+</html>

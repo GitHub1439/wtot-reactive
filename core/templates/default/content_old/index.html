@@ -1,0 +1,184 @@
+{template "content","header"}
+<!--=============================================header_end=============================================-->
+<!--=============================================content=============================================-->
+<!--=============-banner=============-->
+<div id="banner">
+    <div class="bd">
+      <ul>
+{pc:get sql="SELECT setting FROM allwww_poster WHERE spaceid = 12 AND type='images' AND disabled=0 ORDER BY listorder ASC"}
+{loop $data $r}
+<?php
+$narry = string2array($r[setting]);
+?>
+<li><a href="{$narry[1][linkurl]}" title="" style="background:url({$narry[1][imageurl]}) center top no-repeat"></a></li>
+{/loop}
+{/pc}
+      </ul>
+    </div>
+    <a href="javascript:void(0)" class="prev bnt"><img src="{IMG_PATH}bnt_left.png" /></a> <a href="javascript:void(0)" class="next bnt"><img src="{IMG_PATH}bnt_right.png" /></a>
+ <div class="hd"> 
+    <ul >
+{pc:get sql="SELECT setting FROM allwww_poster WHERE spaceid = 12 AND type='images' AND disabled=0 ORDER BY listorder ASC"}
+{loop $data $r}
+<?php
+$narry = string2array($r[setting]);
+?>
+<li><a href=""></a></li>
+{/loop}
+{/pc}
+      <div class="clear"></div>
+    </ul>
+  </div>    
+  </div>
+<div class="clear"></div>
+<!--=============================================content_end=============================================-->
+<div class="s_main_box">
+  <div class="index_up_box">
+  <div class="main_box">
+    <div class="link_box">
+    <ul>
+            {loop subcat(9) $r}
+            <li><h1>{$r[catname]}</h1><a href="{diy_top_link($r[catid])}"><strong>{$r[catname]}</strong><span>{$r[description]}</span></a></li>
+            {/loop}
+    </ul>
+    </div>
+    <div class="search_box">
+
+<script type="text/javascript">
+
+function yanzheng_ss(){
+
+ var isNull=/^[\s'　']*$/
+
+ if(isNull.test(document.getElementById("q").value) || document.getElementById("q").value=='输入关键字....'){
+
+  alert("搜索词不能为空!")
+
+  return false;
+
+ }
+
+}
+
+</script>
+
+          <form action="{APP_PATH}index.php" method="get"  onsubmit="return yanzheng_ss();"  target="_blank" class="frm1">
+
+        <input type="hidden" name="m" value="search"/>
+
+        <input type="hidden" name="c" value="index"/>
+
+        <input type="hidden" name="a" value="init"/>
+
+     <!--    <input type="hidden" name="typeid" value="0" id="typeid"/> -->
+
+        <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/> 
+      <input type="text" class="text"  name="q" id="q" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '输入关键字....';}" value="输入关键字...." />
+      <input type="submit" class="submit" value=" " />
+      <div class="clear"></div>
+    </form>
+    </div>
+    </div>
+  </div>
+  
+  <div class="index_un_box">
+    <div class="main_box">
+         <div class="left s_slide_news">
+          <div class="title">
+            <h1>新闻中心</h1>
+          </div>
+          <div class="hd">
+          {php $i=0}
+          {loop subcat(8) $r}
+          {$i++}
+           <a {if $i==1}class="on"{/if} href="javascript:void">{$r[catname]}<i></i></a>
+          {/loop}
+          </div>
+          <div class="bd">
+          {loop subcat(8) $v}
+
+            <div class="section">
+              <div class="up">
+        {pc:content  action="position" posid="19" catid="$v[catid]" order="listorder DESC" num="1"}
+        {loop $data $r}
+        <a class="fl" href="{$r['url']}" title="{$r['title']}">
+                    <img src="{$r['thumb']}" alt=""  />
+                </a>
+                <div class="fr">
+                    <a href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],45,'...')}</a>
+                    <p>
+                      {str_cut($r['description'],100,'...')}
+                    </p>
+                </div>         
+       {/loop}        
+       {/pc}   
+                <div class="clear"></div>                    
+            </div>
+              <div class="un">
+                        <ul>
+{pc:content action="lists" posids="0" catid="$v[catid]" num="2" order="listorder DESC"}
+
+{loop $data $r}
+<li><a href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],71,'...')}</a><span>{date('Y-m-d',$r['inputtime'])}</span></li>
+{/loop}
+{/pc}        
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            </div>
+{/loop}
+
+
+          </div>
+        </div>
+        <div class="md" id="s_slide_case">
+            <div class="hd">
+                <div class="box">
+               <a href="{diy_top_link(10)}" class="prev"></a>
+               <a href="{diy_top_link(10)}"  class="next"></a> 
+               </div>
+          </div>
+          <div class="bd">
+            <div class="section">
+              <div class="title">
+              <strong>项目案例</strong><span>& Project Case</span>
+              </div>
+              <div class="content">
+                <a href="{diy_top_link(30)}" class="more"><img src="{IMG_PATH}bnt_s_more.png" alt="" /></a>
+                <div class="text_box">
+                  <h1>{$CATEGORYS[30]['catname']}</h1>
+                  <p>{$CATEGORYS[30]['description']}</p>
+                </div>
+                <div class="pic_box">
+                <img class="fl" src="{IMG_PATH}pic_s_case1.jpg" alt="" />
+                <img class="fr" src="{IMG_PATH}pic_s_case2.jpg" alt="" />
+                <div class="clear"></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="up">
+            <h1>西安中地环境科技有限公司</h1>
+            <img src="{IMG_PATH}pic_s_about.jpg" alt="" />
+            <p>
+             {pc:block pos="index_about"}{/pc}
+            </p>
+          </div>
+          <div class="un">
+            <a href="{diy_top_link(13)}">
+            <strong>党群建设</strong>
+            <span>Political Party</span>
+            </a>
+          </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+   
+  </div>
+</div>
+<!--=============================================content_end=============================================-->
+
+<!--===============================footer====================================-->
+{template "content","footer"}

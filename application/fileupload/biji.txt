@@ -1,0 +1,28 @@
+html
+
+<form action="{APP_PATH}index.php?m=guestbook&c=index&a=register&siteid={$siteid}" method="post" name="myform" id="myform" enctype="multipart/form-data"  onsubmit="return validate_form(this)">
+
+<input type="file" accept=".zip,.rar,.docx,.doc" name="fujian[]"> (支持2M以内，zip, rar, docx, doc格式文件)
+
+
+
+
+
+
+php
+			//包含一个文件上传类《细说PHP》中的上传类
+			include "app/fileupload/fileupload.class.php";
+
+			$up = new fileupload;
+			//设置属性(上传的位置， 大小， 类型， 名是是否要随机生成)
+			$up -> set("path", "uploadfile/jianli/");
+			$up -> set("maxsize", 2000000);
+			$up -> set("allowtype", array("zip", "rar","docx","doc"));
+			$up -> set("israndname", ture);
+
+
+			if($up -> upload("fujian")) {
+				$_POST['fujian'] = $up->getFileName();			
+			} else {
+				$_POST['fujian'] = "";		
+			}

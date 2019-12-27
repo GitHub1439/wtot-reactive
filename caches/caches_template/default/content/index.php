@@ -1,0 +1,635 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template("content","header"); ?>
+ 
+<!--=============================================header_end=============================================-->
+<script type="text/javascript" src="/statics/js/three.min.js"></script>
+<section id="banner"  class="section">
+  <div class="main_box">
+  	<img src="/statics/images/text_banner.png" alt="一个全球性文化娱乐数字资产">
+    <h1><a href="#section1" title="">readmore</a></h1>
+  </div>
+   
+    <div id="an_banner"></div>
+    <script type="text/javascript">
+var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+
+var container;
+var camera, scene, renderer;
+
+var particles, particle, count = 0;
+
+var mouseX = 1000, mouseY = -500;
+
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+
+init();
+animate();
+
+function init() {
+
+	container = document.createElement( 'div' );
+	document.body.appendChild( container );
+
+	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 50000 );
+	camera.position.z = 1000;
+
+	scene = new THREE.Scene();
+
+	particles = new Array();
+
+	var PI2 = Math.PI * 2;
+	var material = new THREE.ParticleCanvasMaterial( {
+
+		color: 0xffffff,
+		program: function ( context ) {
+
+			context.beginPath();
+			context.arc( 0, 0, 1, 0, PI2, true );
+			context.fill();
+
+		}
+
+	} );
+ var i = 0;
+
+	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+			particle = particles[ i ++ ] = new THREE.Particle( material );
+			particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+			particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+			scene.add( particle );
+
+		}
+
+	}
+
+	renderer = new THREE.CanvasRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	container.appendChild( renderer.domElement );
+ 
+
+	window.addEventListener( 'resize', onWindowResize, false );
+
+}
+
+function onWindowResize() {
+
+	windowHalfX = window.innerWidth / 2;
+	windowHalfY = window.innerHeight / 2;
+
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
+//
+
+function onDocumentMouseMove( event ) {
+
+	mouseX = event.clientX - windowHalfX;
+	mouseY = event.clientY - windowHalfY;
+
+}
+
+function onDocumentTouchStart( event ) {
+
+	if ( event.touches.length === 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+	}
+
+}
+
+function onDocumentTouchMove( event ) {
+
+	if ( event.touches.length === 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+	}
+
+}
+
+//
+
+function animate() {
+
+	requestAnimationFrame( animate );
+
+	render();
+
+
+}
+
+function render() {
+
+	camera.position.x += ( mouseX - camera.position.x ) * .05;
+	camera.position.y += ( - mouseY - camera.position.y ) * .05;
+	camera.lookAt( scene.position );
+
+	var i = 0;
+
+	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+			particle = particles[ i++ ];
+			particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+			particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 2 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 2;
+
+		}
+
+	}
+
+	renderer.render( scene, camera );
+
+	count += 0.1;
+
+}
+</script>
+</section>
+
+<!--=============================================content=============================================-->
+ <main id="s_main_box">
+ 	<section class="section"  id="section1">
+    <div class="floor f1">
+    	<div class="main_box">
+   	  	<div class="left">
+   	  		<div class="content"  aos="fade-up" aos-duration="1000">
+			 <img src="/statics/images/title_about.png" alt="关于ZZM">
+			 <h1>打造一个全球性文化娱乐数字资产</h1>
+			 <p>
+			 	ZZM团队利用自身行业经验和区块链技术，与诸多大型企业达成战略合作，致力于将区块链
+技术应用于文化娱乐产业，打造一个全球性文化娱乐数字平台，旨在解决目前文化娱乐业痛
+点，扶持新生代文化内容创造者，改变文化娱乐产业的组织结构，重构泛娱乐时代文化娱乐
+产业网络和运营模式。
+			 </p>
+		  </div>
+  	  	 <section id="s_news"  >
+			 <div class="title">
+			 	<a href="list.html">公示公告</a>
+			 </div>
+			 <div class="bd">
+			 	<ul>
+<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=efcde4caddf13e6819c9d7390524473a&action=lists&catid=14&num=10&order=listorder+DESC\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'14','order'=>'listorder DESC','limit'=>'10',));}?>
+<?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
+			 		<li>
+			 			<a href="<?php echo $r['url'];?>"><?php echo str_cut($r['title'],110,'...');?></a>
+			 			<span><?php echo date('Y.m.d',$r['inputtime']);?></span>
+			 		</li>
+<?php $n++;}unset($n); ?>
+<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
+			 	</ul>
+			 </div>
+			 <div class="hd">
+			 	<a href="javascript:void(0)" class="bnt prev">&lt;</a>
+			 	<a href="javascript:void(0)" class="bnt next">&gt;</a>
+			 </div>
+		 </section>
+   	  	</div>
+   	  	<div class="right">
+   	  		<div class="box">
+   	  			<img class="an_ball" src="/statics/images/pic_ball1.png" alt="">
+   	  			<img src="/statics/images/text_an1.png" alt="" class="mark mark1">
+   	  			<img src="/statics/images/text_an2.png" alt="" class="mark mark2">
+   	  			<img src="/statics/images/text_an3.png" alt="" class="mark mark3">
+   	  		</div>
+   	  	</div>
+   	  	<div class="clear"></div>
+ 
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    
+    <section class="section"  id="section2">
+    <div class="floor f2">
+    	<div class="main_box">
+		 
+		  <div class="title" aos="fade-right" aos-duration="1000">
+			  <h1><img src="/statics/images/title_application.png" alt="应用场景" /></h1>
+			  <p>ZZM应用场景广泛且具有可行性，主要分为三大类：内容发行、去中心化存储、碎片化时间。</p>
+		  </div>
+   		 <div class="content"  aos="fade-up" aos-duration="1000">
+			   <div class="content" id="sy_application" >
+				<ul class="img_size">
+					<li class="li1" >
+					 <div class="mark"></div>
+						<div class="title_box">
+							 <h1>内容发行</h1>
+							<strong>Content distribution</strong>
+						</div>
+
+						<div class="info_box">
+						<div class="team_article">
+							 <div class="content">
+								<div class="title">
+									<h1>内容发行</h1>
+									<strong>Content distribution</strong>
+								</div>
+
+								<div class="text">
+									在利用区块链特有的可信数据环境特性，所有的原创者，能够简单、快捷、低成本的完成原创声明、版权登记、和作品众筹，并且能将自己的创作内容上传到去中心化的存储系统，给原创者提供一站式的资产管理方案。
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div> 
+					</div>
+
+
+					 </li>
+					<li class="li2"  >
+					 <div class="mark"></div>
+							<div class="title_box">
+								<h1>去中心化存储</h1>
+							 <strong>De centralization storage</strong>
+							</div>
+
+							<div class="info_box">
+							<div class="team_article">
+								 <div class="content">
+									<div class="title">
+										<h1>去中心化存储</h1>
+										<strong>De centralization storage</strong>
+									</div>
+
+									<div class="text">
+										ZZM平台为原创者身份，创作的文字、影视作品等有价值的信息提供去中心化的存储服务，创新性地融合基于IPFS协议的的去中心化的方案。
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div> 
+						</div>
+
+
+						 </li>
+					<li class="li3" >
+							 <div class="mark"></div>
+							<div class="title_box">
+								<h1>碎片化时间</h1>
+								 <strong>Fragmentation time</strong>
+							</div>
+
+							<div class="info_box">
+							<div class="team_article">
+								 <div class="content">
+									<div class="title">
+										<h1>碎片化时间</h1>
+										<strong>Fragmentation time</strong>
+									</div>
+
+									<div class="text">
+										可以通过ZZMToken，购买明星时间。例如，可以在ZZM平台上，找到女朋友喜欢的明星，给予其一定的ZZM，让其录一段生日祝福视频送给女朋友。
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div> 
+						</div>
+
+
+						 </li>
+					<div class="clear"></div>
+				</ul>
+				<div class="line"></div>
+		 </div>
+		 </div>
+		 
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    
+    <section class="section"  id="section3">
+    <div class="floor f3">
+    	<div class="main_box">
+		  <div class="box" aos="fade-up" aos-duration="1000">
+		  <div class="title" >
+			  <h1>Download</h1>
+			  <p>下载专区</p>
+		  </div>
+   		 <div class="content"  aos="fade-up" aos-duration="1000">
+			  <a href="<?php echo $allFields[$siteid]['baipishu'];?>" target="_blank"><img src="/statics/images/icon_down1.png" alt=""><h1>白皮书</h1></a>
+			  <a href="<?php echo $allFields[$siteid]['qianbao'];?>"><img src="/statics/images/icon_down2.png" alt=""><h1>ZZM钱包</h1></a>
+			  <a id="bnt_miaoni"  href="javascript:void(0)"><img src="/statics/images/icon_down3.png" alt=""><h1>秒你APP</h1>
+			  <div class="info_box">
+					<div class="team_article">
+						 <div class="content">
+						 	<div class="title">
+						 		<h1>秒你APP</h1>
+			  					 
+						 	</div>
+
+							<div class="text">
+								MIAONI(秒你)APP是一款共享明星碎片化时间的应用软件。粉丝可以用数字货币ZZM（至尊宝）购买平台上的明星碎片时间。在特别的日子里，让明星以你的名义，为你的亲朋好友送去温暖的祝福。
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div> 
+				</div>
+			  </a>
+		 </div>
+		  </div>
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    
+    <section class="section"  id="section4">
+    <div class="floor f4">
+    	<div class="main_box">
+    	 
+    	
+		  <div class="box">
+		  <div class="title"  aos="fade-up" aos-duration="1000">
+			  <h1>管理团队</h1>
+			  <p>丰富全球社区及交易所合作渠道 致力于推广ZZM价值传播</p>
+		  </div>
+   		 <div class="content" id="sy_team" >
+			<ul >
+   			<li aos="flip-up" aos-duration="1000">
+   				<div class="box">
+   					<img src="/statics/images/pic_team1.jpg" />
+   				</div>
+   					<div class="title_box">
+   						 <h1>李金龙</h1>
+			  			<strong>CEO/首席执行官</strong>
+   					</div>
+   					 
+   					<div class="info_box">
+					<div class="team_article">
+						 <div class="content">
+						 	<div class="title">
+						 		<h1>李金龙</h1>
+			  					<strong>CEO/首席执行官</strong>
+						 	</div>
+
+							<div class="text">
+								区块链后起之秀，ZZM创始人之一，毕业于山东大学经济学院金融系，在校期间就多次受邀参与电商平台研讨会，毕业后先后从事过互联网行业、金融行业、电商平台运营，2015年受邀参加“2015百家企业金融峰会”后深受启发，转型研究区块链，对区块链有非常深切的热爱，目标将区块链应用于文娱行业并落地。
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div> 
+				</div>
+   				
+   				 
+				 </li>
+				 <li aos="flip-up" aos-duration="1000">
+					<div class="box">
+						<img src="/statics/images/pic_team2.jpg" />
+					</div>
+						<div class="title_box">
+							<h1>威廉·杰弗森·克林顿</h1>
+   						 <strong>创始人</strong>
+						</div>
+
+						<div class="info_box">
+						<div class="team_article">
+							 <div class="content">
+								<div class="title">
+									<h1>威廉·杰弗森·克林顿</h1>
+									<strong>创始人</strong>
+								</div>
+
+								<div class="text">
+									出生在美国纽约，毕业于纽约大学，美国著名经济学家，早期比特币布道者，参与过众多项目投资，其中包括以太坊、瑞波等。
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div> 
+					</div>
+					
+
+					 </li>
+					 <li aos="flip-up" aos-duration="1000">
+						<div class="box">
+							<img src="/statics/images/pic_team3.jpg" />
+						</div>
+						<div class="title_box">
+							<h1>李站</h1>
+   						 <strong>全球市场运营总监</strong>
+						</div>
+
+						<div class="info_box">
+						<div class="team_article">
+							 <div class="content">
+								<div class="title">
+									<h1>李站</h1>
+									<strong>ZZM运营总监</strong>
+								</div>
+
+								<div class="text">
+									ZZM项目运营总监，韩国金融学硕士，有着丰富的留学经历及国际视野。2013年回国创业，成立了一托（中国）集团控股有限公司，同时是一托三大品牌创始人，山东鲁商联盟会副会长，一托梦慈善公益发起人。2015年初入币圈，并在随后的两年时间内参与了区块链投资，项目运营及高峰论坛举办，有着丰富的区块链项目运营经验，有着丰富韩国的区块链社区及交易所合作渠道，致力于推广ZZM价值传播。
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div> 
+					</div>
+					
+
+					 </li>
+				 <div class="clear"></div>
+   		</ul>
+		 </div>
+		  </div>
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    
+        
+  <!--================================j_弹窗表单===================================-->
+		<div id="page_show_box">
+			<div class="bg_box"></div>
+			<div class="box">
+				<div id="page_ar">
+				   <div class="ar_box ">
+					<div id="show_team">
+
+
+					</div>
+					 <div id="bnt_close" class="bnt_close_ar" ><img src="/statics/images/bnt_close.png" /></div>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+		<script>
+	
+	$(function(){
+		  
+	    $('#sy_team  li').click(function() {
+		 
+		var index = $('#sy_team li').index(this);
+		var info_content =  $("#sy_team .info_box:eq(" + index + ")").html();
+		$("#show_team").html(info_content);
+		$("#page_show_box .box").removeClass("j_ar_hide");
+		$("#page_show_box").animate({top:"0px"},100);
+		$("#page_show_box .bg_box").fadeIn( );
+		$("#page_show_box").fadeIn( );
+		$("#page_show_box .ar_article p:last-child").addClass("no_padding");
+		   return false;
+		  
+	   });
+		 $('#sy_application  li').click(function() {
+		 
+		var index = $('#sy_application li').index(this);
+		var info_content =  $("#sy_application .info_box:eq(" + index + ")").html();
+		$("#show_team").html(info_content);
+		$("#page_show_box .box").removeClass("j_ar_hide");
+		$("#page_show_box").animate({top:"0px"},100);
+		$("#page_show_box .bg_box").fadeIn( );
+		$("#page_show_box").fadeIn( );
+		$("#page_show_box .ar_article p:last-child").addClass("no_padding");
+		   return false;
+		  
+	   });
+		
+		$('#bnt_miaoni').click(function() {
+		var info_content =  $("#bnt_miaoni .info_box").html();
+		$("#show_team").html(info_content);
+		$("#page_show_box .box").removeClass("j_ar_hide");
+		$("#page_show_box").animate({top:"0px"},100);
+		$("#page_show_box .bg_box").fadeIn( );
+		$("#page_show_box").fadeIn( );
+		$("#page_show_box .ar_article p:last-child").addClass("no_padding");
+		   return false;
+		  
+	   });
+		//弹窗
+	 $(".bnt_close_ar").click(function(){
+
+		$("#page_show_box .bg_box").fadeOut(0);
+
+		 $("#page_show_box").fadeOut(300);
+
+		});
+	});
+		
+</script>
+    
+    <section class="section"  id="section5">
+    <div class="floor f5">
+    	<div class="main_box">
+    	<div class="an_box">
+    		<img class="an_partner" src="/statics/images/bg_partner.jpg" >
+    	</div>
+    	
+		  <div class="box">
+		  <div class="title"  aos="fade-up" aos-duration="1000">
+			  <h1>合作媒体</h1>
+			  <p>Cooperative media</p>
+		  </div>
+   		 <div class="content" >
+			<ul>
+			   
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo1.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo2.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo3.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo4.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo5.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo6.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo7.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo8.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo9.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo10.png" alt=""></a></li>
+			  </ul>
+		 </div>
+		  </div>
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    <section class="section"  id="section6">
+    <div class="floor f6">
+    	<div class="main_box">
+		  <div class="box">
+		  <div class="title"  aos="fade-up" aos-duration="1000">
+			  <h1>升值理念</h1>
+			  <p>扶持新生代文化内容创造者 改变文化娱乐产业的组织结构</p>
+		  </div>
+   		 <div class="content"  aos="fade-up" aos-duration="1000">
+			 <img class="an_ball1" src="/statics/images/pic_ball2.png" />
+			 <div class="box">
+			 	<img class="an_ball2" src="/statics/images/pic_ball.png" />
+			 	<div class="text_box" aos="zoom-in" aos-duration="1000">
+			 		ZZM<br>
+
+					代币升值
+			 	</div>
+			 </div>
+			 
+			 
+		 </div>
+		  </div>
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    <section class="section"  id="section7">
+    <div class="floor f7">
+    	<div class="main_box">
+		  <div class="box">
+		  <div class="title"  aos="fade-up" aos-duration="1000">
+			 <img src="/statics/images/title_shequ.png" alt="community/社区">
+		  </div>
+   		 <div class="content">
+			 <aside id="shart_box"  aos="fade-up" aos-duration="1000">
+			 	<a href="https://www.facebook.com/profile.php?id=100023796438893" class="li1" title="facebook" target="_blank"><img class="icon" src="/statics/images/icon_facebook.png" alt=""></a>
+			 	<a href="https://twitter.com/BruceLe89807081/status/952445141674967040" class="li2" title="twitter" target="_blank"><img class="icon" src="/statics/images/icon_twitter.png" alt=""></a>
+			 	<a href="https://t.me/joinchat/AAAAAEzIUeAVT5QWmUlbKg" class="li3" title="telegram" target="_blank"><img class="icon" src="/statics/images/icon_telegram.png" alt=""></a>
+			 	<a href="https://youtu.be/VIyD9A0KmTs" class="li4" title="youtube" target="_blank"><img class="icon" src="/statics/images/icon_youtube.png" alt=""></a>
+			 	<a href="https://weibo.com/6389837997/profile?topnav=1&wvr=6&is_all=1" title="sina" class="li5" target="_blank"><img class="icon" src="/statics/images/icon_sina.png" alt=""></a>
+			 	<a id="bnt_ewm" href="javascript:void(0)" class="li6 ewm_box" ><img class="icon" src="/statics/images/icon_wachat.png" alt=""> </a>
+			 </aside>
+			  <div id="fix_ewm_box"><div class="ewm"><img class="pic_ewm" src="/statics/images/ewm.png" alt=""></div></div>
+		 </div>
+		  </div>
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+ </main>
+  <!--音乐 START-->
+<script type="text/javascript">
+$(document).ready(function(){
+   document.getElementById("myAudio").volume = 0.1;
+});
+</script>
+  
+</footer>
+ <!--音乐 START-->
+<audio id="myAudio" autoplay loop class="audio">
+
+  <source src="/statics/css/bg.mp3" type="audio/mpeg">
+
+</audio>
+<!--音乐 END-->
+ 
+<!--============================footer============================= -->
+<?php include template("content","footer"); ?>
+

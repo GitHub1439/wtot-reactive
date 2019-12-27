@@ -1,0 +1,400 @@
+<!doctype html>
+
+
+
+<html class="no-js">
+
+
+
+<head>
+
+
+
+  <meta charset="utf-8">
+
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+  <meta name="description" content="">
+
+
+
+  <meta name="keywords" content="">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+
+
+
+<meta name="keywords" content="{$SEO['keyword']}">
+
+
+
+<meta name="description" content="{$SEO['description']}">
+
+
+
+
+
+
+
+  <!-- Set render engine for 360 browser -->
+
+
+
+  <meta name="renderer" content="webkit">
+
+
+
+  <!-- No Baidu Siteapp-->
+
+
+
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+
+
+  <link rel="icon" type="image/png" href="{WAP_PATH}i/favicon.png">
+
+
+
+  <!-- Add to homescreen for Chrome on Android -->
+
+
+
+  <meta name="mobile-web-app-capable" content="yes">
+
+
+
+  <link rel="icon" sizes="192x192" href="{WAP_PATH}i/app-icon72x72@2x.png">
+
+
+
+
+
+
+
+  <!-- Add to homescreen for Safari on iOS -->
+
+
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+
+
+
+  <link rel="apple-touch-icon-precomposed" href="{WAP_PATH}i/app-icon72x72@2x.png">
+
+
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+
+
+
+  <meta name="msapplication-TileImage" content="{WAP_PATH}i/app-icon72x72@2x.png">
+
+
+
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="{WAP_PATH}css/amazeui.min.css">
+
+
+
+  <link type="text/css" rel="stylesheet" href="{WAP_PATH}font/iconfont.css">
+
+
+
+  <link rel="stylesheet" href="{WAP_PATH}css/app.css">
+
+
+
+  <script src="{WAP_PATH}js/jquery.min.js"></script>
+
+
+
+<style type="text/css">
+
+  #n_nav_list li { margin: 0.5rem 0; }
+
+</style>
+
+
+
+</head>
+
+
+
+<body id="index" >
+
+
+
+<!-- header start -->
+
+<header data-am-widget="header"  class="am-header am-header-default">
+
+
+
+  <div class="am-g">
+
+   
+
+    <div class="am-u-sm-9">
+
+      <a href="{APP_PATH}index.php"><img src="{WAP_PATH}images/logo.png" height="50" alt="" /></a>
+
+    </div>
+
+    <div class="am-u-sm-3">
+
+      <div class="am-header-right am-header-nav bnt_nav">
+
+        <button class="am-btn" data-am-offcanvas="{target: '#aside_nav'}"><i class="am-header-icon j_iconfont">&#xe633;</i></button>
+
+      </div>
+
+    </div>
+
+    
+
+  </div>
+
+</header>
+
+<div class="clear"></div>
+
+
+
+
+
+
+
+{php $k = intval(diy_top_id($catid))}
+
+
+
+
+
+
+
+{php $allFields = customField();}
+
+
+
+  <!-- 侧边栏内容 -->
+
+
+
+  <aside id="aside_nav" class="am-offcanvas">
+
+
+
+  
+
+
+
+    <div class="am-offcanvas-bar am-offcanvas-bar-flip">
+
+
+
+      <div id="nav" class="am-offcanvas-content">
+
+
+
+        <ul class="am-list admin-sidebar-list" id="collapase-nav-1">
+
+
+
+
+
+
+
+    <li  class="am-panel">
+
+
+
+            <a href="{APP_PATH}index.php" >网站首页 <i class="am-icon-angle-right am-fr am-margin-right"></i></a>
+
+
+
+          </li>     
+
+
+
+
+
+
+
+{pc:content action="wapcategory" catid="0" num="20" siteid="$siteid" order="listorder ASC" return="dataa" }
+
+
+
+{php $i=0}
+
+
+
+ {loop $dataa $v}   
+
+
+
+{$i++}
+
+{if $v[child]==1}
+
+        <li class="am-panel">
+
+
+
+            <a data-am-collapse="{parent: '#nav_list{$i}', target: '#nav_list{$i}'}">
+
+
+
+              {$v[catname]} <i class="am-icon-angle-right am-fr am-margin-right"></i>
+
+
+
+            </a>
+
+
+
+            <ul class="am-list am-collapse admin-sidebar-sub" id="nav_list{$i}">
+
+
+
+        {pc:get sql="select * from allwww_category where parentid=$v[catid] order by listorder ASC" num="15" return="zlm"}
+
+
+
+
+
+
+
+            {loop $zlm $r}
+
+
+
+            <li><a  href="{diy_top_link($r[catid])}" >{$r[catname]}</a></li>
+
+
+
+            {/loop}
+
+
+
+
+
+
+
+        {/pc}
+
+
+
+            </ul>
+
+
+
+          </li>
+
+{else}
+
+     <li class="am-panel">
+
+
+
+            <a href="{diy_top_link($v[catid])}">
+
+
+
+              {$v[catname]} <i class="am-icon-angle-right am-fr am-margin-right"></i>
+
+
+
+            </a>
+
+
+
+          </li>
+
+{/if}
+
+        {/loop}          
+
+
+
+
+
+
+
+     {/pc}
+
+
+
+
+
+
+
+        </ul>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  </aside>
+
+
+
+
+
+
+
+
+
+{if $catid}
+
+<section id="banner" class="n_banner">
+
+
+
+ <img src="{WAP_PATH}images/n_banner.jpg" width="100%"  alt=""></a>
+
+
+
+</section>
+
+{/if}
+

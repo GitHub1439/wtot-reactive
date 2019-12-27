@@ -1,0 +1,70 @@
+{template "content","header"}
+
+<div class="n_main_box">
+	<div class="main_box">
+{template "content","left"}
+    <div class="n_right">
+       <div class="n_title">
+             <h1>{$CATEGORYS[$catid][catname]}</h1>
+            <div class="position">
+                <strong>当前位置：</strong>
+                <a href="{siteurl($siteid)}/index.php" title="">首页</a>{catpos($catid)}
+            </div>
+        </div>
+      	<div class="n_content">
+        	<div class="n_article up_box">
+      	 <div class="ar_title">
+            <h1>{$title}</h1>
+            <h2><strong>发布时间：</strong>{date('Y-m-d',strtotime($inputtime))}  <strong style="padding-left:20px;">浏览次数：</strong><a id="hits"></a>次</h2>
+        </div>
+         <div class="article">
+
+      {$content}
+     
+        </div>
+                      <h1><span>上一篇：</span><a href="{$previous_page[url]}">{$previous_page[title]}</a></h1>
+                      <h1><span>下一篇：</span><a href="{$next_page[url]}">{$next_page[title]}</a></h1>
+                      <a href="{diy_top_link($catid)}" class="bnt_back">返回列表</a>
+
+         <div class="bnt_page">
+         	<div class="main_box">
+            <div class="shart_box">
+            	<div class="bdsharebuttonbox " id="j_shart_s_24" data-tag="share_1">
+                <strong>分享到：</strong>
+                <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+                <a class="bds_tsina" data-cmd="tsina"></a>
+                <a class="bds_renren" data-cmd="renren"></a>
+                <a class="bds_tqq" data-cmd="tqq"></a>
+                <a class="bds_weixin" data-cmd="weixin" title="微信"></a>
+                <a class="bds_count" data-cmd="count"></a>
+              </div>
+              </div>
+         	</div>
+          	<script>
+				window._bd_share_config = {
+					
+					share : [{
+						"bdSize" : 24
+					}],
+					
+					
+				}
+				with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+			</script>
+            <div class="clear"></div>
+         </div>
+        <div class="clear"></div>
+      </div>
+           
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--=============================================content_end=============================================-->
+
+<script type="text/javascript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+
+<!--===============================footer====================================-->
+{template "content","footer"}

@@ -1,0 +1,75 @@
+{template "content","header"}
+  <script src="/statics/js/n_banner.js"></script>
+ <style type="text/css">
+	 canvas{ top: -50px; height: 700px !important; opacity:.9;filter:alpha(opacity=90);}	
+</style>
+<!--=============================================header_end=============================================-->
+ 
+<section id="n_banner"  class="section">
+  <div class="an_n_banner">
+      
+  </div>
+   
+    
+    
+</section>
+
+<!--=============================================content=============================================-->
+ <section id="n_main_box">
+    <section class="n_up_box" id="n_nav_bar">
+    <div class="main_box">
+   
+        <section class="position">
+          <span>您当前位置：</span>{catpos($catid,' <i>&gt;</i> ')}
+        </section>
+        <section id="n_nav">
+            <div class="main_box">
+            {php $arrparentid = explode(",", $CAT[arrparentid])}
+            {if subcat($tid)}
+            {loop subcat($tid) $r}
+            <a {if in_array($r[catid], $arrparentid) || $r[catid]==$catid} class="on"{/if} href="{$r[trueurl]}" title=""><span></span><strong>{$r[catname]}</strong></a>
+            {/loop}
+            {else}
+            <a class="on" href="{$CATEGORYS[$catid][trueurl]}" title=""><span></span><strong>{$CATEGORYS[$catid][catname]}</strong></a>
+            {/if}
+            <div class="clear"></div>
+            </div>
+         </section>
+      </div>
+    
+    </section>
+    <section class="n_content">
+        <div class="main_box">
+        <section id="n_news" class="img_size">
+            <ul>
+{pc:content action="lists" catid="$catid" num="6" order="listorder DESC" page="$page"}
+{loop $data $r}
+                     <li>
+                        <div class="pic_box" ><a href="{$r['url']}" target="_blank"><img  src="{$r['thumb']}" alt="{$r['title']}" /></a></div>
+                        <div class="text_box">
+                        <h1><a href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],110,'...')}</a></h1>
+                           <span>{date('Y/m/d',$r['inputtime'])}</span>
+                            <div class="p">
+                            {str_cut($r['description'],230,'...')}
+                            </div>
+                             <i> </i>
+                        </div>
+                    </li>
+{/loop}
+{/pc}
+                   <div class="clear"></div>
+                </ul>
+        </section>
+        
+        <div class="clear"></div>
+        
+        <div class="page"> 
+                 {$pages}
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+    </section>
+</section>
+<!--============================footer============================= -->
+{template "content","footer"}

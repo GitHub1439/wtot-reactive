@@ -1,0 +1,160 @@
+
+
+
+
+
+
+{template "wap","header"}
+
+
+
+<script type="text/javascript">
+
+  $(document).ready(function(){  
+
+  var w = window.screen.width;
+
+  var h = Math.round(w/2/260*155)+"px";
+
+  $(".img_news img").css("height", h);
+
+  });
+
+</script>
+
+
+
+<!-- header end -->
+
+
+
+{php $con = count(subcat($k))}
+
+{if $con > 3}
+
+{php $con = 3}
+
+{/if}
+
+{if $con > 0}
+
+<nav id="n_nav_list" class="am-avg-sm-{$con} am-avg-md-{$con} am-avg-lg-{$con} ">
+
+
+
+      {loop subcat($k) $r}
+
+
+
+      <li {if $catid==$r[catid]}class="on"{/if}><a href="{diy_top_link($r[catid])}">{$r['catname']}</a></li>
+
+
+
+      {/loop}
+
+
+
+</nav>
+
+{/if}
+
+
+
+
+
+<!-- content start -->
+
+<article class="nr_content article"  >
+
+
+
+  <article class="video_list">
+
+    <div class="content ">
+
+     <ul class="am-list am-avg-sm-2">
+
+   {pc:content action="lists" catid="$catid" num="8" order="listorder DESC" page="$page"}
+
+
+
+            {loop $data $r}
+
+<li >
+
+      <div class="box img_box">
+
+        <div class="up">
+
+          <a href="{$r[url]}"  class="img_news"> <img src="{$r[thumb]}" style="height: 8.5rem;" alt=""/></a>
+
+        </div>
+
+        <div class="un">
+
+          <div class="title_news"><a href="{$r[url]}" class="">{$r[title]}</a></div>
+
+
+
+        </div>
+
+        </div>
+
+      </li>
+
+
+
+            {/loop}
+
+
+
+            {/pc}  
+
+
+
+     
+
+    </ul>
+
+  </div>
+
+     <div class="clear"></div>
+
+    <section class="ar_fot" style="margin-top: 3rem">
+
+        <ul data-am-widget="pagination"
+
+            class="am-pagination am-pagination-select" id="pages">
+
+            {$pages}
+
+            
+
+        </ul>
+
+    </section>
+
+  
+
+  </article>
+
+</article>
+
+<!-- content end -->
+
+
+
+
+
+
+
+<!-- footer start -->
+
+<!-- footer start -->
+
+
+
+{template "wap","footer"}
+
+
+

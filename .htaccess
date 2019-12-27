@@ -1,0 +1,13 @@
+
+RewriteEngine on
+
+#静态文件以及API目录不需要伪静态
+RewriteRule ^(statics|api|uploadfile|vango|phpMyAdmin|application|phpsso_server)(.*) - [L]
+
+#内容页
+RewriteRule ^([0-9A-Za-z_/]*)/([0-9]+)\.html index.php?m=content&c=index&a=show&dir=$1&id=$2&%{QUERY_STRING}
+RewriteRule ^([0-9A-Za-z_/]*)/([0-9]+)_([0-9]+)\.html index.php?m=content&c=index&a=show&dir=$1&id=$2&page=$3&%{QUERY_STRING}
+
+#栏目页
+RewriteRule ^([0-9A-Za-z_/]*)/index_([1-9][0-9]*)\.html index.php?m=content&c=index&a=lists&dir=$1&page=$2&%{QUERY_STRING}
+RewriteRule ^([0-9A-Za-z_/]*)/(index\.html)? index.php?m=content&c=index&a=lists&dir=$1&%{QUERY_STRING}

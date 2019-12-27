@@ -1,0 +1,242 @@
+
+
+<meta charset="utf-8">
+<style type="text/css">
+.main_box{ width:1200px; margin:0 auto;}
+/*==============================--内页开始==============================-*/
+
+.n_main_box{ margin:0px auto 0px auto; min-height:360px; position:relative;}
+.n_main_box .main_box{ margin:0 auto; }
+#n_banner{ height:380px; width:100%; overflow:hidden;}
+
+.n_title{ position:relative; height:48px; line-height:48px; border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5;}
+.n_title .main_box{ position:relative; border-right:1px solid #e5e5e5;}
+.n_nav{ position:absolute; left:0; top:0; border-right:1px solid #e5e5e5;}
+.n_nav a{display:block; text-align:center; position:relative; color:#5f5f6a ; font-size:14px; float:left; width:144px; border-left:1px solid #e5e5e5; }
+.n_nav a i{ display:block; position:absolute; height:0px; z-index:1; top:-1px; left:0px; width:145px; background:url(statics/moban_3/images/bg_n_nav.png) center top no-repeat;}
+.n_nav a strong{ position:relative; display:block; z-index:4;}
+.n_nav a.on{ color:#fff;}
+.n_nav a.on i{ height:56px;}
+.n_nav a:hover{ color:#fff;}
+.n_nav a:hover i{ height:56px; }
+
+/*==============当前位置=====================*/
+.position{ position:absolute; right:0; font-size:12px; background:url(statics/moban_3/images/icon_home.png) left center no-repeat; padding-left:15px;}
+.position strong{ color:#777777; font-size:12px; font-weight:normal;}
+.position strong img{ padding-right:5px; padding-top:2px;}
+.position a{ color:#777777; display:inline-block; }
+.position a:hover{color:#2a508f;}
+.position .li{ color:#777777;  background:url(statics/moban_3/images/icon_sj.png) left center no-repeat; padding-left:13px; display:inline-block; font-size:12px; }
+.position span{ color:#debb66 !important; font-size:12px;}
+
+/*==============n_content=====================*/
+.n_content{ min-height:400px; padding:60px 0;}
+
+.title_box{ position:absolute; top:25px; left:0;  border-right:1px solid #e0e2e8; padding-right:30px;}
+.title_box h1{display:block; font-size: 55px; font-family: "Arial"; color: #f1eff1; text-transform: uppercase;}
+.title_box h2{display:block; margin-top:15px; color:#3d3d47; font-size: 22px;}
+.title_box h3{display:block;font-size: 12px;  color: #3d3d47; text-transform: uppercase;}
+
+/*===================产品================*/
+#n_pro{}
+#n_pro .content{ }
+#n_pro ul{ margin:-5px;   }
+#n_pro li{ width:290px; background:#fff; border: 1px solid #fff; float:left; margin:5px; }
+#n_pro li a{ display:block; }
+#n_pro li:hover{ border-width: 1px; border-color: rgb( 220, 220, 220 ); border-style: solid; background-color: rgb( 255, 255, 255 ); box-shadow: 0px 0px 10px 0px #ddd;}
+#n_pro li img{ width:290px; margin:0 auto;  height:205px;  display:block;  display:block; background:#fff; }
+#n_pro li .pic_box{ position:relative;}
+#n_pro li .mark{opacity:0; filter:alpha(opacity=0); position:absolute; width:100%; height:100%; }
+#n_pro li .text_box{ border-top:1px solid #fff; padding:10px; white-space: nowrap;overflow:hidden;text-overflow: ellipsis; }
+#n_pro li h1{font-size:14px; color:#3c3b3b; text-align:center; display:block; margin:10px 0; white-space: nowrap;overflow:hidden;text-overflow: ellipsis;}
+#n_pro li:hover .text_box{  }
+#n_pro li:hover .text_box h1{ color:#186460;}
+
+#n_product_show .up_box .left{ width:530px;}
+#n_product_show .up_box .left .j_Photo{overflow:hidden;margin:0px auto 0;width:540px; }
+#n_product_show .up_box .left .big_box{overflow:hidden;margin-bottom:10px;width:540px;height:380px; position:relative;}
+#n_product_show .up_box .left .big_box li{ position:relative; height: 380px;}
+#n_product_show .up_box .left .big_box ul li img{display:block; width:540px; height:380px;}
+#n_product_show .up_box .left .small_box{overflow:hidden;width:540px;height: 88px; position:relative;}
+#n_product_show .up_box .left .small_list{position:relative;float:left;overflow:hidden; margin-left: 30px; width: 475px; height:88px;}
+#n_product_show .up_box .left .small_list ul{overflow:hidden;height:88px}
+#n_product_show .up_box .left .small_list ul li{position:relative;float:left;margin-right:18px; cursor:pointer; width:102px}
+#n_product_show .up_box .left .small_list ul li img{display:block; width:115px; height:86px;}
+#n_product_show .up_box .left .small_list ul li .bun_bg{ display:none; position:absolute;top:0;left:0;width:115px;height:88px; background:url(statics/moban_3/images/mark_j_photle.png) center no-repeat;}
+#n_product_show .up_box .left .small_list ul .on .bun_bg{ display:block; }
+#n_product_show .up_box .left .btn{display:block;width:17px;height:72px;background-color:#777;background-position:center;background-repeat:no-repeat;cursor:pointer}
+#n_product_show .up_box .left .btn:hover{} 
+#n_product_show .up_box .left .btn img{ padding-top:40px;}
+#n_product_show .up_box .left .small_bnt .left_btn{float:left;margin-right:10px;background-image:url(statics/moban_3/images/bnt_pic_left.png)}
+#n_product_show .up_box .left .small_bnt .right_btn{float:right;background-image:url(statics/moban_3/images/bnt_pic_right.png)}
+#n_product_show .up_box .left  .left_btn{position:absolute; left:0px; background:url(statics/moban_3/images/bnt_pic_left.jpg) center no-repeat; }
+#n_product_show .up_box .left  .right_btn{ position:absolute; right:0px; background:url(statics/moban_3/images/bnt_pic_right.jpg) center no-repeat;}
+#n_product_show .up_box .left .left img{}
+#n_product_show .up_box .right{ width: 600px; font-size:12px; line-height:24px;}
+#n_product_show .up_box  right .up { padding-bottom:25px; margin-bottom:25px; border-bottom:1px solid #cecece;}
+#n_product_show .up_box .right .up h1{ font-size:16px; color:#424242; font-weight:bold; padding-bottom:20px;}
+#n_product_show .up_box .right .up p{  }
+#n_product_show .up_box .right .up strong{ font-size:12px; color: #7e7e7f;}
+#n_product_show .un_box{ margin-top:60px; }
+#n_product_show .un_box .title{ position:relative; padding-left:18px; line-height:16px; border-bottom:1px solid #d2d2d2; padding-bottom:15px; font-size:14px; color:#494949;}
+#n_product_show .un_box .title i{ display:block; height:16px; width:8px; background:#debb66; position:absolute; left:0; top:0px;}
+#n_product_show .un_box .ar_article{ padding:25px; color:#666;}
+#n_product_show .un_box .ar_article p{ color:#666;}
+
+/*==============分页——银灵子=====================*/
+.page { margin:0px auto 0px auto;}
+.page .box{display:inherit; width:100%;  text-align: right; padding-top: 30px;}
+.page a{ padding:0 12px; height:30px; line-height:30px; display:inline-block; border:1px solid #dedede; margin:0 2px;  color:#555555; font-size:12px; }
+.page .on{ background:#debb66; color:#fff !important;border:1px solid #debb66;}
+.page span{ background:#debb66; color:#fff !important;border:1px solid #debb66;}
+.page a:hover{ background:#debb66; color:#fff !important; text-decoration:none; border:1px solid #debb66; }
+.page a.u_bnt{ transition: all 1s;-moz-transition: all 1s; /* Firefox 4 */-webkit-transition: all 1s; /* Safari 和 Chrome */
+-o-transition: all 1s; /* Opera */}
+
+</style>
+
+<!--============================content============================-->
+
+<article class="n_main_box">
+  <div class="n_title">
+    <div class="main_box">
+      <div class="position">
+          <strong>当前位置：</strong>
+          <a href="index.html" title="网站首页">首页</a>
+          <a href="" class="li" title="">走进百年</a>
+          <span class="li">公司概况</span>
+      </div>
+      <div class="n_nav">
+        <a class="on" href="走进百年.html"><i class="mark"></i><strong>营养膳食类</strong></a>
+        <a href="企业文化.html" ><i class="mark"></i><strong>医疗器械类</strong></a>
+        <a href="企业荣誉.html"><i class="mark"></i><strong>护肤品类</strong></a>
+       
+      </div>
+    </div>
+  </div>
+  <section class="n_content main_box">
+  <section id="n_pro">
+    <div class="n_st_list  ">
+               <div class="content  ">
+                  <ul class="gallery">
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro1.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro2.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro3.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro4.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro5.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro6.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro7.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro8.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro9.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro10.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro11.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                        <li> 
+                          <a href="产品详情.html" title=" ">
+                          <div class="pic_box"><img src="statics/moban_3/images/pic_pro12.jpg"></div> 
+                          <div class="text_box">
+                            <h1>百姿堂SPF15PA+++水润焕白防晒组合1</h1>
+                          </div>
+                          </a> 
+                        </li>
+                
+                        <div class="clear"></div>
+                      </ul>
+                  <div class="clear"></div>
+                 </div> 
+               <div class="page">
+                     <div class="box">
+                        <a href="">上一页</a>
+                        <a href="">1</a>
+                        <a  class="on" href="">2</a>
+                        <a href="">3</a>
+
+                        <a href="">4</a>
+                        <a href="">5</a>
+                       <a href="">下一页</a>
+                        </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+  </section>
+  </section>
+
+</article>
+
+

@@ -1,0 +1,186 @@
+
+
+
+
+
+
+{template "wap","header"}
+
+
+
+<!-- header end -->
+
+
+
+<!-- 导航切换 -->
+
+
+{if $CAT[parentid]!=0}
+
+{php $con = count(subcat($CAT[parentid]))}
+
+{if $con > 3}
+
+{php $con = 3}
+
+{/if}
+
+{if $con > 0}
+
+<nav id="n_nav_list" class="am-avg-sm-{$con} am-avg-md-{$con} am-avg-lg-{$con} ">
+
+
+
+      {loop subcat($CAT[parentid]) $r}
+
+
+
+      <li {if $catid==$r[catid]}class="on"{/if}><a href="{wapurl(diy_top_link($r[catid]))}">{$r['catname']}</a></li>
+
+
+
+      {/loop}
+
+
+
+</nav>
+
+{/if}
+
+{/if}
+
+
+
+
+
+<!-- content start -->
+
+<article class=" article nr_content">
+
+  <section id="s_news">
+
+    <div class="content">
+
+      <div data-am-widget="tabs" class="am-tabs am-tabs-d2" style="margin:0;">
+
+        <div class="am-tabs-bd">
+
+          <!--li-->
+
+          <div data-tab-panel-0 class="am-tab-panel am-active">
+
+            <div data-am-widget="list_news"  style="margin:0;" class="am-list-news un am-list-news-default" >
+
+              <div class="am-list-news-bd">
+
+                <ul class="am-list">
+
+ {pc:content action="lists" catid="$catid" num="10" order="listorder DESC" page="$page"}
+
+{loop $data $r}
+
+ <li class="am-g am-list-item-dated"><strong style="font-size: 6px; color: #999;">●</strong><a href="{$r['url']}" class="am-list-item-hd "> {str_cut($r['title'],110,'')} </a> <span class="am-list-date">{date('Y-m-d',$r['inputtime'])}</span> </li>
+
+
+{/loop}
+
+{/pc}
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--li-->
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </section>
+
+    <div class="clear"></div>
+
+      <section class="ar_fot">
+
+
+
+        <ul data-am-widget="pagination"
+
+
+
+            class="am-pagination am-pagination-select" id="pages">
+
+
+
+            {$pages}
+
+
+
+            
+
+
+
+        </ul>
+
+
+
+    </section>
+
+</article>
+
+
+
+
+
+
+  
+
+
+
+</article>
+
+
+
+<!-- content end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer start -->
+
+
+
+
+
+
+
+{template "wap","footer"}
+
+
+
+
+
+
+
+
+
+
+

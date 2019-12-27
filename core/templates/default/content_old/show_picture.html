@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>文件公示</title>
+<link type="text/css" href="{CSS_PATH}reset.css" rel="stylesheet" rev="stylesheet" />
+<link type="text/css" href="{CSS_PATH}css.css" rel="stylesheet" rev="stylesheet" />
+<link rel="stylesheet" href="{CSS_PATH}j_book.css">
+</head>
+<body >
+
+<!--============================banner============================= --> 
+
+<!--============================ banner-end ============================= --> 
+
+<!--============================content-start============================= -->
+<div id="j_book" style=" background:#444;"> 
+<!--<a class="j_book_bnt_back" href="javascript:history.go(-1)" title="返回"></a>
+-->  <div class="book_content docs-galley">
+    <div class="content_box">
+      <div class="docs-pictures clearfix">
+        {php $i=0}
+      {loop $pictureurls $pic_k $r}
+      {$i++}
+      {if $i==1}
+      <div class="li"><img data-original="{$r[url]}" src="{$r[url]}" alt="{$r[alt]}"></div>
+      {else}
+      <div class="li"><img data-original="{$r[url]}" src="{thumb($r[url], 201, 237, 0)}" alt="{$r[alt]}"></div>
+      {/if}
+      {/loop}
+      </div>
+    </div>
+  </div>
+  <!--文件公示栏目导航--> 
+  
+</div>
+<div id="book_nav">
+  <div class="box"> 
+        {pc:content action="lists" catid="$catid" posids="0" num="50" order="listorder asc"}
+
+        {loop $data $r}
+
+        <a {if $r['id']==$id} class="on" {/if} href="{$r['url']}"><img src="{$r['thumb']}" alt="{$r['title']}" /><strong>{$r['title']}</strong></a>   
+
+       {/loop}        
+
+       {/pc} 
+  </div>
+</div>
+</div>
+
+<!--============================content_end============================= --> 
+<!-- Scripts --> 
+<script src="{JS_PATH}jquery-1.9.1.min.js"></script> 
+<script src="{JS_PATH}j_book.js"></script> 
+<script>
+var viewer = new Viewer(document.getElementById('j_book'), {
+	url: 'data-original'
+});
+</script> 
+
+<!--============================content_end============================= --> 
+<!--============================footer============================= --> 
+
+<!--============================footer_end============================= -->
+</body>
+</html>

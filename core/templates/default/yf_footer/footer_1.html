@@ -1,0 +1,103 @@
+
+
+
+
+
+
+<meta charset="utf-8">
+<style type="text/css">
+*{font-family:Arial, Helvetica,"Microsoft Yahei", sans-serif; padding: 0; margin: 0;}
+/*css定义超链接四个状态也有顺序的。*/   
+a:link, a:visited { text-decoration: none; cursor:pointer !important;}  
+a:hover, a:active {  border: none;  color: #666;  }  
+.n_main_box{ margin-top:50px; margin-bottom:50px; position:relative;}
+.main_box{ margin:0 auto; width:1200px;}
+ /*==============footer=====================*/
+#footer{background: #393947; padding: 20px 0;  font-size:12px; }
+#footer .main_box{ position:relative;}
+#footer .up{ height: 32px; padding-bottom: 15px; position: relative;}
+#fot_nav { float: left; padding-top: 5px;}
+#fot_nav a{ color:#aeaeb1;}
+#fot_nav i{color:#aeaeb1; padding:0 10px;}
+#footer .un { color:#737377; line-height: 20px; padding-top: 15px; border-top: 1px solid #59595a;}
+#footer .line{ position:absolute; top: -17px; left: 0; height: 2px; background: #fff; width: 47px;}
+#footer .un a{color:#737377;}
+#footer a:hover{ color:#fff;}
+#footer .fot_bnt{ position: relative; padding-left: 20px; display: block;  float: left;}
+#footer .fot_bnt .ewm{ position: absolute; left: -13px; bottom: 50px; display: none;}
+#footer .fot_bnt.ewm_box:hover .ewm{ display: block;}
+#fot_tel{ position: absolute; right: 0; top: 0; color: #a4a4a7; font-size: 12px; padding-left: 15px; background: url(statics/moban_1/images/icon_fot_tel.png) left center no-repeat;}
+#fot_tel strong{ color: #ef8404; font-weight:bold; font-size: 14px; }
+/*==========相关链接===========*/
+#slide_up_box{ position: absolute; right: 0; top: -25px;}
+#bnt_link{cursor:pointer; width:220px; margin-top:25px; display:block; height:30px;    background:url(statics/moban_1/images/icon_un.png) 200px center no-repeat #fff; }
+.icon_un{background:url(statics/moban_1/images/icon_up.png) 200px center no-repeat #fff !important;}
+#bnt_link a{ color:#3c414c; display:block; padding:0 15px; height:30px; font-size:12px; line-height:30px; background: url(statics/moban_1/images/bg_dd.png) 185px top repeat-y;}
+#bnt_link i{ font-size:10px; padding-left:5px;}
+#content_link{ display:none; z-index:9;  width: 220px; position: absolute; left: 0; bottom: 31px; background:#fff; max-height:300px; overflow:hidden; overflow-y:auto; }
+#content_link .box{   background:#fff; padding:5px 0;}
+#content_link a{ padding:0 15px; color:#3c414c; border-bottom:1px dotted #eee; line-height:30px; font-size:12px; display:block; }
+#content_link a:hover,#bnt_link a:hover{ color:#10578e;}
+</style>
+<script type="text/javascript">
+  
+/*====================================页面配置====================================*/
+$(function(){
+
+  $("#bnt_link").click(function(){
+      $(this).toggleClass("icon_un");
+      $("#content_link").slideToggle(0);
+       
+    });
+  $(".s_fast_link").slide({mainCell:".bd ul",autoPage:true,effect:"topLoop",autoPlay:true,vis:1});
+
+  
+})
+
+
+
+  
+</script>
+<!--===============================footer====================================-->
+<footer id="footer">
+        <section class="up">
+            <div class="main_box">
+                <nav id="fot_nav">
+                    <a href="" title="">集团简介 </a><i>|</i>
+                    <a href="" title="">新闻动态</a><i>|</i>
+                    <a href="" title="">人才战略</a><i>|</i>
+                    <a href="" title="">联系方式</a>  
+                </nav>
+            
+                 
+            <aside id="slide_up_box">
+             <div class="top_link ">
+                <dl>
+                    <dt id="bnt_link" class="icon_un"><a href="javascript:void(0)">集团子公司</a></dt>
+                    <dd id="content_link" style="display: none;">
+                        <div class="box">
+                        <a href="index.html" target="_blank" style="border: none;">中铁建设集团2</a>
+                        <a href="index.html" target="_blank" style="border: none;">中铁建设集团1</a>
+                        </div>
+                    </dd>
+                </dl>
+           </div>
+           
+            </aside>
+        </div>
+        </section>
+        <section class="un">
+            <div class="main_box">
+                <mark class="line"></mark>
+            ©2017 All rights reserved . 陕西四维实业集团  陕ICP备12009808号  技术支持 <a href="http//:www.fgkj.cc" title="技术支持：凡高科技">凡高科技</a>
+            <aside id="fot_tel">
+                  
+                     <span class="">咨询热线：</span>
+                     <strong>029-37187677</strong>
+                   
+            </aside>
+            </div>
+            
+        </section>
+		<div class="clear"></div>
+</footer>

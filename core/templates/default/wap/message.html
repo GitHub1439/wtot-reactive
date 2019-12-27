@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>提示信息</title>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="icon" type="image/png" href="{WAP_PATH}i/favicon.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="{WAP_PATH}{WAP_PATH}i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="{WAP_PATH}i/app-icon72x72@2x.png">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="{WAP_PATH}i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+<link rel="stylesheet" href="{WAP_PATH}css/amazeui.min.css">
+ <style type="text/css">
+ 	#j_tishi{ width: 90%; margin: 30px auto; border-radius: 5px 5px 0 0px; overflow: hidden;}
+ 	#j_tishi h4{ font-weight: normal; font-size: 14px;}
+ 	#j_tishi .am-panel-bd{ font-size: 12px; line-height: 25px; text-align: center;}
+ 	#j_tishi fotter{ text-align: center; padding: 1rem; display: inherit; padding-bottom: 2rem;}
+ 	#j_tishi fotter a{ padding: 5px 20px; display: inline-block; font-size: 12px;}
+ </style>
+
+</head>
+<body >
+<section id="j_tishi" class="am-panel am-panel-default">
+			<header class="am-panel-hd"><h4 class="am-panel-title">提示信息</h4></header>
+			<article class="am-panel-collapse am-collapse am-in">
+				<div class="am-panel-bd">
+        	
+        			{$msg}
+        	
+      </div>
+			</article>
+			<fotter>
+				<div class="bottom">
+    {if $url_forward=='goback' || $url_forward==''}
+	<a href="javascript:history.back();" >[点这里返回上一页]</a>
+	{elseif $url_forward=="close"}
+	<input type="button" name="close" value=" 关闭 " onClick="window.close();">
+	{elseif $url_forward=="blank"}
+	{elseif $url_forward}
+	<a  href="{strip_tags($url_forward)}" class="am-btn am-btn-default am-radius">如果您的浏览器没有自动跳转，请点击这里</a>
+	<script language="javascript">setTimeout("redirect('{strip_tags($url_forward)}');",{$ms});</script> 
+	{/if}
+	{if $dialog}<script style="text/javascript">window.top.location.reload();window.top.art.dialog({id:"{$dialog}"}).close();</script>{/if}
+        </div>
+				
+				<div class="clear"></div>
+			</fotter>
+     
+</section>
+<script style="text/javascript">
+	function close_dialog() {
+		window.top.location.reload();window.top.art.dialog({id:"<?php echo $dialog?>"}).close();
+	}
+</script>
+</body>
+</html>
+
+

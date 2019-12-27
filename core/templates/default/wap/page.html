@@ -1,0 +1,130 @@
+
+
+{template "wap","header"}
+
+
+
+<!-- header end -->
+
+
+
+<!-- header end -->
+
+
+
+{php $con = count(subcat($k))}
+
+{if $con > 3}
+
+{php $con = 3}
+
+{/if}
+
+{if $con > 0}
+
+<nav id="n_nav_list" class="am-avg-sm-{$con} am-avg-md-{$con} am-avg-lg-{$con} ">
+
+
+
+      {loop subcat($k) $r}
+
+
+
+      <li {if $catid==$r[catid]}class="on"{/if}><a href="{diy_top_link($r[catid])}">{$r['catname']}</a></li>
+
+
+
+      {/loop}
+
+
+
+</nav>
+
+{/if}
+
+
+
+
+
+<article class="main_box nr_content">
+
+
+
+   <section class="n_article">
+
+
+
+    <div class="ar_title">
+
+
+
+      <h1>{getcatname($catid)}</h1>
+
+
+
+    </div>
+
+
+
+    <article class="ar_content j_article"  style=" padding-top: 1rem;">
+
+
+
+ {$content}
+
+
+
+    </article>
+
+
+
+
+
+
+
+  </section>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+<!-- content end -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer start -->
+
+
+
+
+
+
+
+{template "wap","footer"}
+
+
+
+
+
+
+
+
+

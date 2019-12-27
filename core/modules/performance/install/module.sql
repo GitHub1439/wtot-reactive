@@ -1,0 +1,1 @@
+INSERT INTO `phpcms_module` (`module`, `name`, `url`, `iscore`, `version`, `description`, `setting`, `listorder`, `disabled`, `installdate`, `updatedate`) VALUES ('performance', '绩效管理', 'performance/', 0, '1.0', '绩效管理', '', 0, 0, '2010-9-05', '2010-9-05');

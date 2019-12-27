@@ -1,0 +1,47 @@
+{php $kefu = kefu()}
+{if	is_array($kefu) && $kefu[1]['is_open']==1}
+	{if $kefu[1]['typeid']==1}
+		<script type="text/javascript" src="{APP_PATH}statics/kefu/1/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="{APP_PATH}statics/kefu/1/js/script.js"></script>
+		<link rel="stylesheet" href="{APP_PATH}statics/kefu/1/css/style.css" />
+
+		<div id="online_qq_layer" show="1" style="right: 0px; display: block;">
+			<div id="online_qq_tab">
+				<div class="online_icon">
+				<a title="在线客服" id="floatTrigger" href="javascript:void(0);"></a>
+				</div>
+			</div>
+			<div id="onlineService">
+				<div class="online_windows overz">
+					<div class="online_w_top"> </div>
+					<div class="online_w_c overz">
+						{pc:get sql="SELECT * FROM allwww_type WHERE module = 'kefu' ORDER BY listorder ASC"}
+						{loop $data $r}
+						<div class="online_bar collapse">
+						<h2> <a href="javascript:;">{$r['name']}</a> </h2>
+							<div class="online_content overz" id="onlineType1" style="display: block;">
+								<ul class="overz">
+								{pc:get sql="SELECT * FROM allwww_kefu WHERE typeid='$r[typeid]' ORDER BY listorder ASC" num="20" return="pic_link"}
+								{loop $pic_link $v}
+									{if $v['linktype']==2}
+									<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v['url']}&site={$v['name']}&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:12345678:51" alt="我们竭诚为您服务！" title="我们竭诚为您服务！"/></a></li>
+									{elseif $v['linktype']==0}
+									<li>{$v['name']}：{$v['url']}</li>
+									{elseif $v['linktype']==1}
+									<img src="{$v['logo']}" style="display: block;margin: 0 auto 5px;width: 90px">
+									{/if}
+								{/loop}
+								{/pc}
+								</ul>
+							</div>
+						</div>
+						{/loop}
+						{/pc}
+					</div>
+				<div class="online_w_bottom"> </div>
+				</div>
+			</div>
+		</div>
+	{/if}
+{/if}
+

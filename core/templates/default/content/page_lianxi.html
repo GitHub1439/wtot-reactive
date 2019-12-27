@@ -1,0 +1,262 @@
+{template "content","header"}
+
+<!--============================ banner-end ============================= -->
+
+
+
+<!--=============================================content=============================================-->
+
+<div class="n_main_box"> 
+
+    <div class="n_title">
+
+        <div class="main_box">
+
+        <h1><strong>{$CATEGORYS[$tid][catname]} </strong><span>{$CATEGORYS[$tid][catname_en]}</span></h1>
+
+        <div class="tel_box">{$allFields[$siteid]['tel']}</div>
+
+        </div>
+
+    </div>
+
+      
+
+    <div class="n_content">
+
+       
+
+        <div class="main_box">
+
+          <div class="n_contact">
+
+            <div class="left">
+
+              <div class="up_box">
+
+                <div class="article">
+
+                  <img src="{IMG_PATH}pic_name_contact.png"   height="32" /><br />
+
+                  <br />
+
+
+
+                                    <p style="font-size:13px; color:#5e5e60;">
+
+                                    服务咨询：{$allFields[$siteid]['zixun']}   <br />
+
+                                    售后服务：{$allFields[$siteid]['shouhou']}<br />
+
+                                    投诉建议：{$allFields[$siteid]['tousu']}<br />
+
+                                    电子邮箱：{$allFields[$siteid]['email']}<br />
+
+                                    联系地址：{$allFields[$siteid]['address']}
+
+                                    </p>
+
+                </div>
+
+              </div>
+
+              <div class="un_box">
+
+                <div class="map">
+
+                                    <iframe src="map.html" width="100%" frameborder="0" height="230"></iframe>
+
+                                </div>
+
+              </div>
+
+            </div>
+
+            <div class="right" id="j_form">
+
+        <form action="{APP_PATH}index.php?m=guestbook&c=index&a=register_code&siteid={$siteid}"
+        method="post" name="myform" id="myform" onsubmit="return validate_form(this)">
+            <dl>
+                <dd>
+                    <strong>
+                        姓名
+                    </strong>
+                    <input class="text" type="text" id="name" name="name" />
+                </dd>
+                <dd>
+                    <strong>
+                        电话
+                    </strong>
+                    <input class="text" type="text" name="shouji" id="shouji" />
+                </dd>
+                <dd>
+                    <strong>
+                        地址
+                    </strong>
+                    <input class="text" type="text" name="lxqq" id="lxqq" />
+                </dd>
+                <dd style="height:38px;">
+                    <strong>
+                        服务
+                    </strong>
+                    <div class="radio_section">
+                        <label for="radio1" class="radio_box ">
+                            <i class="radio_icon">
+                            </i>
+                            <input class="radio" id="radio1" type="radio" value="无痛开奶" name="sex"
+                            />
+                            <b>
+                                无痛开奶
+                            </b>
+                        </label>
+                        <label for="radio2" class="radio_box ">
+                            <i class="radio_icon">
+                            </i>
+                            <input class="radio" id="radio2" type="radio" value="催奶通乳" name="sex"
+                            />
+                            <b>
+                                催奶通乳
+                            </b>
+                        </label>
+                        <label for="radio3" class="radio_box ">
+                            <i class="radio_icon">
+                            </i>
+                            <input class="radio" id="radio13" type="radio" value="涨奶疏通" name="sex"
+                            />
+                            <b>
+                                涨奶疏通
+                            </b>
+                        </label>
+                        <label for="radio24" class="radio_box ">
+                            <i class="radio_icon">
+                            </i>
+                            <input class="radio" id="radio4" type="radio" value="断奶回奶" name="sex"
+                            />
+                            <b>
+                                断奶回奶
+                            </b>
+                        </label>
+                    </div>
+                </dd>
+                <dd>
+                    <strong>
+                        备注
+                    </strong>
+                    <textarea class="textarea" name="introduce" id="introduce">
+                    </textarea>
+                </dd>
+                <dd class="yzm_box">
+                    <input class="text" type="text" value="请输入验证码" onfocus="this.value = '';"
+                    onblur="if (value=='') {value='请输入验证码'}" name="code" id="code" />
+                    <div class="yzm">
+                        {form::checkcode('code_img','4','14',95,36)}
+                        <a class="yzmtips" href="javascript:void(0)">
+                            点击图片更换
+                        </a>
+                    </div>
+                </dd>
+                <input name="dosubmit" type="hidden" value="dosubmit" />
+                <dt>
+                    <input class="submit" type="submit" value="提交" />
+                </dt>
+            </dl>
+        </form>
+
+            </div>
+
+            <div class="clear"></div>
+
+          </div>          
+
+        </div>
+
+    </div>
+
+  
+
+</div>
+
+
+
+
+
+<script type="text/jscript" src="{JS_PATH}layer.js"></script>
+
+<script type="text/javascript">
+function check_img()
+{
+    $("#code_img").click();
+}
+function validate_form(field, alerttxt) 
+{
+    var isNull = /^[\s'　']*$/;
+    if (isNull.test(document.getElementById("name").value) || document.getElementById("name").value == '您的姓名') {
+        layer.tips('请填写姓名', '#name', {
+            tips : [1, '#333'], time : 4000 
+        });
+        return false;
+    }
+    if (isNull.test(document.getElementById("shouji").value) || document.getElementById("shouji").value == '联系电话') {
+        //小tips
+        layer.tips('请填写联系电话', '#shouji', {
+            tips : [1, '#333'], time : 4000 
+        });
+        return false;
+    }
+    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    if (!myreg.test($("#shouji").val())) {
+        layer.tips('请输入有效的手机号码！', '#shouji', {
+            tips : [1, '#333'], time : 4000 
+        });
+        return false;
+    }
+    if (isNull.test(document.getElementById("code").value) || document.getElementById("code").value == "请输入验证码") {
+        //小tips
+        layer.tips('请输入验证码', '#code', {
+            tips : [1, '#333'], time : 4000 
+        });
+        return false;
+    }
+    else
+    {
+        //验证验证码
+        $.ajax(
+        {
+            url : '{APP_PATH}index.php?m=guestbook&c=index&a=checkcode', type : 'POST', data : {
+                code : $.trim($("input[name=code]").val()) 
+            },
+            dataType : 'json', async : false,
+            success : function (result) 
+            {
+                if (result.status == 1) {
+                    document.getElementById("myform").submit();
+                    //验证码正确提交表单
+                }
+                else 
+                {
+                    //  $("#code_img").click();
+                    layer.tips('验证码错误！', '#code', {
+                        tips : [1, '#333'], time : 4000 
+                    });
+                }
+            },
+            error : function (msg) 
+            {
+                layer.tips('获取验证码失败！', '#code', {
+                    tips : [1, '#333'], time : 4000 
+                });
+            }
+        });
+        return false;
+    }
+}
+ </script>
+
+
+
+
+
+{template "content","footer"}
+
+
+

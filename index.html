@@ -1,0 +1,843 @@
+ <!doctype html>
+<html lang="zh-cmn-Hans"><head>
+<meta charset="utf-8">
+ <!-- technical support：Van gogh network -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>ZZMBlockchain - the world's first blockchain, a new digital currency combining culture and entertainment!</title>
+<meta name="keywords" content="ZZM,Super treasure, digital currency, cryptographic code, block chain, block chain technology, bitcoin,BTC, ethereum,ETH, wave currency,XRP, litecoin,LTC, little ant,NEO,EOS">
+<meta name="description" content="The world's first blockchain, a new digital currency combining culture and entertainment, is committed to applying the blockchain technology to the cultural and entertainment industry, creating a global cultural and entertainment digital asset, and reconstructing the network and operation model of the cultural and entertainment industry in the pan-entertainment era.">
+<link rel="shortcut icon" href="/favicon.ico"/>
+   <!-- Style file -->
+     <link rel="stylesheet" href="/statics/css/j_reset.css">
+      <link rel="stylesheet" href="/statics/css/j_web.css">
+      <link rel="stylesheet" href="/statics/css/j_animate.css">  
+	  <link rel="stylesheet" href="/statics/css/bootstrap.min.css">
+       <script type="text/javascript" src="/statics/js/jquery-1.9.1.min.js"></script>
+	   <script type="text/javascript" src="/statics/js/bootstrap.bundle.min.js"></script>
+	   <script type="text/javascript" src="/statics/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="/statics/js/j_reset.js"></script>
+      <script type="text/javascript" src="/statics/js/j_web.js"></script>
+      <script type="text/javascript" src="/statics/js/j_div_scoll.js"></script>
+    <!-- Compatible files -->
+    <!--[if lt IE 9]>
+      <script src="/statics/js/j_ijr.js"></script>
+    <![endif]--> 
+</head> 
+<body>
+<link rel="shortcut icon" href="favicon.ico">
+<div id="j_body">
+<!--=============================================header=============================================-->
+    
+  <!--=============================================header=============================================-->
+<header id="header">
+  <div class="main_box">
+  
+    <div id="logo"> <a href="javascript:;" title=""><img src="/statics/images/logo.png" alt="" /></a> </div>
+    <aside id="lan_box">
+      <div class="box">
+        <h1>English</h1>
+      <div class="content">
+        <a href="javascript:;">English </a>
+		<a href="index_ch.html">中文简体 </a>
+        <!-- <a href="http://qklft.zzmcoin.com/"">中文繁体</a>
+        <a href="http://qklhw.zzmcoin.com/""> 한글 </a>
+        <a href="http://qklrw.zzmcoin.com/"">日本語の</a> -->
+      </div>
+      </div>
+      
+    </aside>
+    <a href="javascript:void(0)" id="bnt_site_map"></a>
+    
+  <div id="nav">
+        <img class="nav_logo" src="/statics/images/logo.png" width="50px" />
+        <ul>
+            <li><a href="http://cn.zzmcoin.com#banner" title="" class="a"><strong>home</strong><span><i></i></span></a></li>
+            <li  ><a href="http://cn.zzmcoin.com#section1" title="" class="a"><strong>about</strong><span><i></i></span></a> </li>
+            <li ><a href="http://cn.zzmcoin.com#section2" title="" class="a"><strong>white paper</strong><span><i></i></span></a>
+               
+            </li>
+            <li><a href="http://cn.zzmcoin.com#section3" title="" class="a"><strong>download</strong><span><i></i></span></a>
+               
+            </li>
+            <li><a href="http://cn.zzmcoin.com#section4" title="" class="a"><strong>team</strong><span><i></i></span></a>
+               
+            </li>
+            <li><a href="http://cn.zzmcoin.com#section7" title="" class="a"><strong>white paper</strong><span><i></i></span></a>
+               
+            </li>
+            <!-- <li><a href="http://cn.zzmcoin.com#section6" title="" class="a"><strong>升值理念</strong><span><i></i></span></a>
+               
+            </li>
+            <li><a href="http://cn.zzmcoin.com#section7" title="" class="a"><strong>社区</strong><span><i></i></span></a>
+               
+            </li> -->
+             
+            <div class="clear"></div>
+        </ul>
+        <div id="bnt_nav_close">close</div>
+    </div>
+  
+    <div class="clear"></div>
+  </div>
+</header> 
+<!--=============================================header_end=============================================-->
+<script type="text/javascript" src="/statics/js/three.min.js"></script>
+<section id="banner"  class="section">
+  <div class="main_box">
+  	<h1>Build the WTOT application</h1>
+    <h4>One Belt And One Road digital silk road, jointly build the global WTOT ecology and share the world WTOT value</h4>
+  </div>
+   
+    <div id="an_banner"></div>
+    <script type="text/javascript">
+var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+
+var container;
+var camera, scene, renderer;
+
+var particles, particle, count = 0;
+
+var mouseX = 1000, mouseY = -500;
+
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+
+init();
+animate();
+
+function init() {
+
+	container = document.createElement( 'div' );
+	document.body.appendChild( container );
+
+	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 50000 );
+	camera.position.z = 1000;
+
+	scene = new THREE.Scene();
+
+	particles = new Array();
+
+	var PI2 = Math.PI * 2;
+	var material = new THREE.ParticleCanvasMaterial( {
+
+		color: 0xffffff,
+		program: function ( context ) {
+
+			context.beginPath();
+			context.arc( 0, 0, 1, 0, PI2, true );
+			context.fill();
+
+		}
+
+	} );
+ var i = 0;
+
+	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+			particle = particles[ i ++ ] = new THREE.Particle( material );
+			particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+			particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+			scene.add( particle );
+
+		}
+
+	}
+
+	renderer = new THREE.CanvasRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	container.appendChild( renderer.domElement );
+ 
+
+	window.addEventListener( 'resize', onWindowResize, false );
+
+}
+
+function onWindowResize() {
+
+	windowHalfX = window.innerWidth / 2;
+	windowHalfY = window.innerHeight / 2;
+
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
+//
+
+function onDocumentMouseMove( event ) {
+
+	mouseX = event.clientX - windowHalfX;
+	mouseY = event.clientY - windowHalfY;
+
+}
+
+function onDocumentTouchStart( event ) {
+
+	if ( event.touches.length === 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+	}
+
+}
+
+function onDocumentTouchMove( event ) {
+
+	if ( event.touches.length === 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+	}
+
+}
+
+//
+
+function animate() {
+
+	requestAnimationFrame( animate );
+
+	render();
+
+
+}
+
+function render() {
+
+	camera.position.x += ( mouseX - camera.position.x ) * .05;
+	camera.position.y += ( - mouseY - camera.position.y ) * .05;
+	camera.lookAt( scene.position );
+
+	var i = 0;
+
+	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+			particle = particles[ i++ ];
+			particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+			particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 2 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 2;
+
+		}
+
+	}
+
+	renderer.render( scene, camera );
+
+	count += 0.1;
+
+}
+</script>
+</section>
+
+<!--=============================================content=============================================-->
+ <main id="s_main_box">
+ 	<section class="section"  id="section1">
+    <div class="floor f1 container-fluid">
+    	<div class="main_box row" style="margin: 0 auto;">
+   	  	<div class="left col-lg-8 col-sm-12">
+   	  		<div class="content"  aos="fade-up" aos-duration="1000">
+			 <div class="content_title">What's WTOT?</div>
+			 <!-- <h1>打造一个全球性文化娱乐数字资产</h1> -->
+			 <p>
+			 	WTOT is short for WTOT. Block chain technology, the use of digital code, distributed accounting. WTOT adopts ethereum environment development, with built-in AI intelligent robot for automatic excavation. You buy the miner with the coin and the miner produces the coin and you cycle until you're done. Intelligent calculation force, link calculation force. To build a decentralized customer equity capital platform based on block chain technology, non-state credit endorsement issuance is convenient, fast, safe, no time difference, borderless, anonymous.
+			 </p>
+		  </div>
+  	  	 <section id="s_news"  >
+			 <div class="title">
+			 	<a href="list.html">Public Announcement</a>
+			 </div>
+			 <div class="bd">
+			 	<ul>
+			 		<li>
+			 			<a href="/news/gongshigonggao/18.html">An update to the WTOT wallet</a>
+			 			<span>2018.02.01</span>
+			 		</li>
+			 		<li>
+			 			<a href="/news/gongshigonggao/14.html">In 2018, blockchain technology will prevail globally, and WTOT may break out in the New Year！</a>
+			 			<span>2018.01.26</span>
+			 		</li>
+			 		<li>
+			 			<a href="/news/gongshigonggao/13.html">The origin of WTOT and its future development</a>
+			 			<span>2018.01.26</span>
+			 		</li>
+			 		<li>
+			 			<a href="/news/gongshigonggao/12.html">Li zhan, operation director of ZZM China, was invited to attend the important conference of Korea technology valley</a>
+			 			<span>2018.01.26</span>
+			 		</li>
+			 		<li>
+			 			<a href="/news/gongshigonggao/11.html">WTOT hand in hand with MIAONI(seconds you), a strong landing "the world's first screen"!</a>
+			 			<span>2018.01.26</span>
+			 		</li>
+			 		<li>
+			 			<a href="/news/gongshigonggao/10.html">Congratulations to WTOT on the successful cooperation with MIAONI(second you)</a>
+			 			<span>2018.01.25</span>
+			 		</li>
+			 	</ul>
+			 </div>
+			 <div class="hd">
+			 	<a href="javascript:void(0)" class="bnt prev">&lt;</a>
+			 	<a href="javascript:void(0)" class="bnt next">&gt;</a>
+			 </div>
+		 </section>
+   	  	</div>
+   	  	<div class="right col-lg-4 col-sm-12">
+   	  		<div class="box">
+   	  			<img class="an_ball" src="/statics/images/pic_ball1.png" alt="">
+   	  			<img src="/statics/images/text_an1.png" alt="" class="mark mark1">
+   	  			<img src="/statics/images/text_an2.png" alt="" class="mark mark2">
+   	  			<img src="/statics/images/text_an3.png" alt="" class="mark mark3">
+   	  		</div>
+   	  	</div>
+   	  	<div class="clear"></div>
+ 
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    
+    <section class="section"  id="section2">
+    <div class="floor f2">
+    	<div class="main_box">
+		 
+		  <div class="title" aos="fade-right" aos-duration="1000">
+			  <div class="content_title">about</div>
+			  <p>Clouds group headquarters is located in Singapore, the company strength is abundant, the main business is the development of network technology and maintenance, software development and maintenance, block chain services and financial data services, is a company dedicated to block chain service and network technology service as one of the company, technology of entrepreneurial talents is dedicated to provide you with a good working environment, at the same time for investors to provide a safe and reliable one-stop service platform.</p>
+		  </div>
+   		 <div class="content"  aos="fade-up" aos-duration="1000">
+			   <div class="content container-fluid" id="sy_application" >
+				<ul class="img_size row">
+					<li class="li1 col-lg-4 col-sm-12" >
+					 <div class="mark"></div>
+						<div class="title_box">
+							 <h1>Network, software development and maintenance</h1>
+							<strong>Network, software development and maintenance</strong>
+						</div>
+
+						<div class="info_box">
+						<div class="team_article">
+							 <div class="content">
+								<div class="title">
+									<h1>Network, software development and maintenance</h1>
+									<strong>Network, software development and maintenance</strong>
+								</div>
+
+								<div class="text">
+									With the unique features of the block chain trusted data environment, all the originators can complete the original declaration, copyright registration and work crowdfunding easily, quickly and at a low cost, and upload their creative content to a decentralized storage system, providing the originators with a one-stop asset management scheme.
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div> 
+					</div>
+
+
+					 </li>
+					<li class="li2 col-lg-4 col-sm-12"  >
+					 <div class="mark"></div>
+							<div class="title_box">
+								<h1>BaaS</h1>
+							 <strong>block chain service</strong>
+							</div>
+
+							<div class="info_box">
+							<div class="team_article">
+								 <div class="content">
+									<div class="title">
+										<h1>BaaS</h1>
+										<strong>block chain service</strong>
+									</div>
+
+									<div class="text">
+										WTOT provides decentralized storage service for the identity of the originator, the created text, film and television works and other valuable information, and innovatively integrates the decentralized scheme based on the IPFS protocol.
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div> 
+						</div>
+
+
+						 </li>
+					<li class="li3 col-lg-4 col-sm-12" >
+							 <div class="mark"></div>
+							<div class="title_box">
+								<h1>Financial data service</h1>
+								 <strong>Financial data service</strong>
+							</div>
+
+							<div class="info_box">
+							<div class="team_article">
+								 <div class="content">
+									<div class="title">
+										<h1>Financial data service</h1>
+										<strong>Financial data service</strong>
+									</div>
+
+									<div class="text">
+										Star time can be purchased through ZZMToken. For example, you can find the star your girlfriend likes on the ZZM platform, give him some ZZM, and let him record a video of birthday wishes for his girlfriend.
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div> 
+						</div>
+
+
+						 </li>
+					<div class="clear"></div>
+				</ul>
+				<div class="line"></div>
+		 </div>
+		 </div>
+		 
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    
+    <section class="section"  id="section3">
+    <div class="floor f3">
+    	<div class="main_box">
+		  <div class="box" aos="fade-up" aos-duration="1000">
+		  <div class="title" >
+			  <h1>WTOC wallet</h1>
+			  <p>Download</p>
+		  </div>
+   		 <div class="content"  aos="fade-up" aos-duration="1000">
+			  <a href="/statics/upload/baipishu/ZZM_whitepaper V4.0-jianti.pdf" target="_blank"><img src="/statics/images/ios.png" alt=""><h1>ios</h1></a>
+			  <a href="/uploadfile/20180126/1516930846130678.zip"><img src="/statics/images/android.png" alt=""><h1>android</h1></a>
+			  <!-- <a id="bnt_miaoni"  href="javascript:void(0)"><img src="/statics/images/icon_down3.png" alt=""><h1>秒你APP</h1>
+			  <div class="info_box">
+					<div class="team_article">
+						 <div class="content">
+						 	<div class="title">
+						 		<h1>秒你APP</h1>
+			  					 
+						 	</div>
+
+							<div class="text">
+								MIAONI(秒你)APP是一款共享明星碎片化时间的应用软件。粉丝可以用数字货币WTOT购买平台上的明星碎片时间。在特别的日子里，让明星以你的名义，为你的亲朋好友送去温暖的祝福。
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div> 
+				</div>
+			  </a> -->
+		 </div>
+		  </div>
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    
+	<section class="section"  id="section6">
+	<div class="floor f6">
+		<div class="main_box">
+		  <div class="box">
+		  <div class="title"  aos="fade-up" aos-duration="1000">
+			  <h1>WTOT operation system</h1>
+			  <p>WTOT operating system USES a module component underlying architecture to build in the user application or the block chain chain, most of the components are sample can be designed like a lego - through mutual reference and assemble it to use, all components support pluggable technology, such as the consensus components support POw, POS, dPOS, PBFT etc, support the RSA encryption algorithm and the dense, users also can be extended.</p>
+		  </div>
+		 <div class="content"  aos="fade-up" aos-duration="1000">
+			 <img class="an_ball1" src="/statics/images/pic_ball2.png" />
+			 <div class="box">
+			 	<img class="an_ball2" src="/statics/images/pic_ball.png" />
+			 	<div class="text_box" aos="zoom-in" aos-duration="1000">
+			 		ZZM<br>
+	
+					Tokens of appreciation
+			 	</div>
+			 </div>
+			 
+			 
+		 </div>
+		  </div>
+	
+			<div class="clear"></div>
+		</div>
+	</div>
+		 <div class="clear"></div>
+	</section>
+	
+    <section class="section"  id="section4">
+    <div class="floor f4">
+    	<div class="main_box">
+    	 
+    	
+		  <div class="box">
+		  <div class="title"  aos="fade-up" aos-duration="1000">
+			  <h1>our team</h1>
+			  
+		  </div>
+   		 <div class="content" id="sy_team" >
+			<ul >
+   			<li aos="flip-up" aos-duration="1000">
+   				<div class="box">
+   					<img src="/statics/images/mobile/team01.png" />
+   				</div>
+   					<div class="title_box">
+   						 <h1>Mr O --</h1>
+			  			<strong>Graduated from Novosibirsk state university, prior to the practice of block chain technology, has more than 15 years of industry experience in the field of electronic payment. At the same time, I also acted as an angel investor to invest and guide a number of start-up projects, and won the title of "star angel investor under 40" and "top 10 new angel ".</strong>
+   					</div>
+   					 
+   					<div class="info_box">
+					<div class="team_article">
+						 <div class="content">
+						 	<div class="title">
+						 		<h1>阿弗里堪</h1>
+			  					<!-- <strong>Graduated from Novosibirsk state university, prior to the practice of block chain technology, has more than 15 years of industry experience in the field of electronic payment. At the same time, I also acted as an angel investor to invest and guide a number of start-up projects, and won the title of "star angel investor under 40" and "top 10 new angel ".</strong> -->
+						 	</div>
+
+							<div class="text">
+								Graduated from Novosibirsk state university, prior to the practice of block chain technology, has more than 15 years of industry experience in the field of electronic payment. At the same time, I also acted as an angel investor to invest and guide a number of start-up projects, and won the title of "star angel investor under 40" and "top 10 new angel ".
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div> 
+				</div>
+   				
+   				 
+				 </li>
+				 <li aos="flip-up" aos-duration="1000">
+					<div class="box">
+						<img src="/statics/images/mobile/team02.png" />
+					</div>
+						<div class="title_box">
+							<h1>Victor</h1>
+   						 <strong>Graduated from Novosibirsk state university, distinguished expert of Russia, honorary tenured professor of Arizona state university, director of block chain Internet laboratory of national big data comprehensive experiment area.</strong>
+						</div>
+
+						<div class="info_box">
+						<div class="team_article">
+							 <div class="content">
+								<div class="title">
+									<!-- <h1>维克托</h1> -->
+									<strong>Graduated from Novosibirsk state university, distinguished expert of Russia, honorary tenured professor of Arizona state university, director of block chain Internet laboratory of national big data comprehensive experiment area.</strong>
+								</div>
+
+								<div class="text">
+									Graduated from Novosibirsk state university, distinguished expert of Russia, honorary tenured professor of Arizona state university, director of block chain Internet laboratory of national big data comprehensive experiment area.
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div> 
+					</div>
+					
+
+					 </li>
+					 <li aos="flip-up" aos-duration="1000">
+						<div class="box">
+							<img src="/statics/images/mobile/team03.png" />
+						</div>
+						<div class="title_box">
+							<h1>Serhiy</h1>
+   						 <strong>Graduated from Moscow state university, bachelor of mathematics and master of computer science, have rich experience in P2P network development, familiar with block chain technology development, proficient in C/C++ python. Shell, worked in Vobile Vobile as a senior development engineer进入翻译页面</strong>
+						</div>
+
+						<div class="info_box">
+						<div class="team_article">
+							 <div class="content">
+								<div class="title">
+									<h1>谢尔盖</h1>
+									<!-- <strong>ZZM运营总监</strong> -->
+								</div>
+
+								<div class="text">
+									Graduated from Moscow state university, bachelor of mathematics and master of computer science, have rich experience in P2P network development, familiar with block chain technology development, proficient in C/C++ python. Shell, worked in Vobile Vobile as a senior development engineer进入翻译页面
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div> 
+					</div>
+					
+
+					 </li>
+					 <li aos="flip-up" aos-duration="1000">
+					 	<div class="box">
+					 		<img src="/statics/images/mobile/team04.png" />
+					 	</div>
+					 	<div class="title_box">
+					 		<h1>Sandinista</h1>
+					 	 <strong>Graduated from st. Petersburg state university of information technology, mechanics and optics research, senior Java engineer, has rich experience in Internet development, has considerable experience in big data collection, analysis and mining.</strong>
+					 	</div>
+					 
+					 	<div class="info_box">
+					 	<div class="team_article">
+					 		 <div class="content">
+					 			<div class="title">
+					 				<h1>尼斯塔</h1>
+					 				<!-- <strong>ZZM运营总监</strong> -->
+					 			</div>
+					 
+					 			<div class="text">
+					 				Graduated from st. Petersburg state university of information technology, mechanics and optics research, senior Java engineer, has rich experience in Internet development, has considerable experience in big data collection, analysis and mining.
+					 			</div>
+					 		</div>
+					 		<div class="clear"></div>
+					 	</div> 
+					 </div>
+					 
+					 
+					  </li>
+					  <li aos="flip-up" aos-duration="1000">
+					  	<div class="box">
+					  		<img src="/statics/images/mobile/team05.png" />
+					  	</div>
+					  	<div class="title_box">
+					  		<h1>Helmut cole</h1>
+					  	 <strong>Block chain senior engineer, in the chain of blocks, the encryption algorithm and digital wallets with actual combat experience, has 12 years of Linux/Windows environment of C/C + + program design and development experience. Proficient in network programming under Linux, POSIX multithreaded programming and STL programming, make up the shel scripts and Makefile, skilled learning data structure and the commonly used algorithms and artificial intelligence algorithms such as the Internet of things. With rich experience in Internet development, I have rich experience in big data collection, analysis and mining.</strong>
+					  	</div>
+					  
+					  	<div class="info_box">
+					  	<div class="team_article">
+					  		 <div class="content">
+					  			<div class="title">
+					  				<h1>赫尔慕特.科尔</h1>
+					  				<!-- <strong>ZZM运营总监</strong> -->
+					  			</div>
+					  
+					  			<div class="text">
+					  				Block chain senior engineer, in the chain of blocks, the encryption algorithm and digital wallets with actual combat experience, has 12 years of Linux/Windows environment of C/C + + program design and development experience. Proficient in network programming under Linux, POSIX multithreaded programming and STL programming, make up the shel scripts and Makefile, skilled learning data structure and the commonly used algorithms and artificial intelligence algorithms such as the Internet of things. With rich experience in Internet development, I have rich experience in big data collection, analysis and mining.
+					  			</div>
+					  		</div>
+					  		<div class="clear"></div>
+					  	</div> 
+					  </div>
+					  
+					  
+					   </li>
+				 <div class="clear"></div>
+   		</ul>
+		 </div>
+		  </div>
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section>
+    
+        
+  <!--================================j_弹窗表单===================================-->
+		<div id="page_show_box">
+			<div class="bg_box"></div>
+			<div class="box">
+				<div id="page_ar">
+				   <div class="ar_box ">
+					<div id="show_team">
+
+
+					</div>
+					 <div id="bnt_close" class="bnt_close_ar" ><img src="/statics/images/bnt_close.png" /></div>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+		<script>
+	
+	$(function(){
+		  
+		  
+		  //WTOT运行系统栏目点击弹框
+// 	    $('#sy_team  li').click(function() {
+// 		 
+// 		var index = $('#sy_team li').index(this);
+// 		var info_content =  $("#sy_team .info_box:eq(" + index + ")").html();
+// 		$("#show_team").html(info_content);
+// 		$("#page_show_box .box").removeClass("j_ar_hide");
+// 		$("#page_show_box").animate({top:"0px"},100);
+// 		$("#page_show_box .bg_box").fadeIn( );
+// 		$("#page_show_box").fadeIn( );
+// 		$("#page_show_box .ar_article p:last-child").addClass("no_padding");
+// 		   return false;
+// 		  
+// 	   });
+	   
+	   //关于我们栏目点击弹框
+// 		 $('#sy_application  li').click(function() {
+// 		 
+// 		var index = $('#sy_application li').index(this);
+// 		var info_content =  $("#sy_application .info_box:eq(" + index + ")").html();
+// 		$("#show_team").html(info_content);
+// 		$("#page_show_box .box").removeClass("j_ar_hide");
+// 		$("#page_show_box").animate({top:"0px"},100);
+// 		$("#page_show_box .bg_box").fadeIn( );
+// 		$("#page_show_box").fadeIn( );
+// 		$("#page_show_box .ar_article p:last-child").addClass("no_padding");
+// 		   return false;
+// 		  
+// 	   });
+		
+		$('#bnt_miaoni').click(function() {
+		var info_content =  $("#bnt_miaoni .info_box").html();
+		$("#show_team").html(info_content);
+		$("#page_show_box .box").removeClass("j_ar_hide");
+		$("#page_show_box").animate({top:"0px"},100);
+		$("#page_show_box .bg_box").fadeIn( );
+		$("#page_show_box").fadeIn( );
+		$("#page_show_box .ar_article p:last-child").addClass("no_padding");
+		   return false;
+		  
+	   });
+		//弹窗
+	 $(".bnt_close_ar").click(function(){
+
+		$("#page_show_box .bg_box").fadeOut(0);
+
+		 $("#page_show_box").fadeOut(300);
+
+		});
+	});
+		
+</script>
+    
+    <!-- <section class="section"  id="section5">
+    <div class="floor f5">
+    	<div class="main_box">
+    	<div class="an_box">
+    		<img class="an_partner" src="/statics/images/bg_partner.jpg" >
+    	</div>
+    	
+		  <div class="box">
+		  <div class="title"  aos="fade-up" aos-duration="1000">
+			  <h1>合作媒体</h1>
+			  <p>Cooperative media</p>
+		  </div>
+   		 <div class="content" >
+			<ul>
+			   
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo1.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo2.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo3.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo4.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo5.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo6.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo7.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo8.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo9.png" alt=""></a></li>
+			  	<li aos="zoom-in-up" aos-duration="1000"><a href="javascript:void(0)"><img src="/statics/images/logo10.png" alt=""></a></li>
+			  </ul>
+		 </div>
+		  </div>
+
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    	 <div class="clear"></div>
+    </section> -->
+    
+    <section class="section"  id="section7">
+    <div class="floor f7">
+    	<div class="main_box">
+		  <div class="box">
+		  <div class="title"  aos="fade-up" aos-duration="1000">
+			 <div class="bps">White paper download</div>
+		  </div>
+   		 <div class="content lianxi">
+			 <p>phone: 0065- 6566413555</p>
+			 <p>site: Upper Circular Road Maracas road section</p>
+		  </div>
+		  <div class="ewms">
+		  	<img src="/statics/images/ewm.jpg" alt="">
+		  </div>
+    		<div class="clear"></div>
+    	</div>
+		
+    </div>
+    	 <div class="clear"></div>
+    </section>
+ </main>
+  <!--音乐 START-->
+<script type="text/javascript">
+$(document).ready(function(){
+   document.getElementById("myAudio").volume = 0.1;
+});
+</script>
+  
+</footer>
+ <!--音乐 START-->
+<audio id="myAudio" autoplay loop class="audio">
+
+  <source src="/statics/css/bg.mp3" type="audio/mpeg">
+
+</audio>
+<!--音乐 END-->
+ 
+<!--============================footer============================= -->
+<!-- <div class="bar_fot" ><div class="line_bar"></div></div> -->
+<!-- <footer id="footer">
+  
+    <div class="main_box">
+        <div class="copyright"> 
+        <img src="/statics/images/logo_fot.png" />
+      © 2018 Copyright ZZMTEAM<br>
+      <a href="mailto:zzmcoin@gmail.com" title="zzmcoin@gmail.com" target="_blank"> E-mail：zzmcoin@gmail.com
+</a> 
+      </div>
+       <div id="fot_nav">
+         <dl>
+           <dd>
+             <h1>关于ZZM</h1>
+             <a href="http://cn.zzmcoin.com#section1" title="" >ZZM介绍</a>
+             <a href="http://cn.zzmcoin.com#section4" title="">研发团队</a>
+             <a href="mailto:zzmcoin@gmail.com" title="">联系我们</a>
+               
+           </dd>
+           <dd>
+             <h1>下载专区</h1>
+             <a href="/statics/upload/baipishu/ZZM_whitepaper V4.0-jianti.pdf" target="_blank" title="">白皮书</a>
+             <a href="/uploadfile/20180126/1516930846130678.zip" title="">ZZM钱包</a>
+             <a href="http://cn.zzmcoin.com#section3" title="">秒你APP</a>
+             
+           </dd>
+           <dd>
+             <h1>资讯中心</h1>
+             <a href="/news/gongshigonggao/" title="">公示公告</a>
+             <a href="/news/xingyedongtai/" title="">行业动态</a>
+             
+           </dd>
+           <dd>
+             <h1>合作单位</h1>
+             <a href="http://cn.zzmcoin.com#section5" title="">合作媒体</a>
+              
+           </dd>
+           <div class="clear"></div>
+         </dl>
+       </div>
+       
+       
+       <div class="clear"></div>
+  </div>
+ 
+  
+</footer> -->
+
+
+
+</div>
+
+<script language="JavaScript" src="/api.php?op=cnzzip"></script>
+     <script type="text/jscript" src="/statics/js/j_animate.js"></script>
+</body>
+</html> 
+

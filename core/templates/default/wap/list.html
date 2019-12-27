@@ -1,0 +1,122 @@
+
+
+
+{template "wap","header"}
+
+<!-- header end -->
+
+<!-- 导航切换 -->
+
+{php $con = count(subcat($k))}
+{if $con > 3}
+{php $con = 3}
+{/if}
+<nav id="n_nav_list" class="am-avg-sm-{$con} am-avg-md-{$con} am-avg-lg-{$con} ">
+
+      {loop subcat($k) $r}
+
+      <li {if $catid==$r[catid]}class="on"{/if}><a href="{diy_top_link($r[catid])}">{$r['catname']}</a></li>
+
+      {/loop}
+
+</nav>
+
+
+
+<!-- content start -->
+
+<article class="nr_content" id="n_news"  >
+
+    <div class="content">
+
+
+      <section class="article news_list">
+
+
+
+            <ul class="am-avg-sm-1 am-avg-md-2 am-avg-lg-3">
+
+            {pc:content action="lists" catid="$catid" num="5" order="listorder DESC" page="$page"}
+
+            {loop $data $r}
+
+            <li>
+
+                    <div class="time">
+
+                        <strong>{date('d',$r[inputtime])}</strong>
+
+                        <span>{date('Y.m',$r[inputtime])}</span>
+
+                    </div>
+
+                    <div class="text_box">
+
+                        <a class="text_sd title" href="{$r[url]}" title="">{$r[title]}</a>
+
+                        <p>
+
+                            {str_cut(strip_tags($r[description]),130,'...')}
+
+                        </p>
+
+                    </div>
+
+                </li>
+
+            {/loop}
+
+            {/pc}  
+
+
+
+            </ul>
+
+     </section>
+
+
+
+    <div class="clear"></div>
+
+    <section class="ar_fot">
+
+        <ul data-am-widget="pagination"
+
+            class="am-pagination am-pagination-select" id="pages">
+
+            {$pages}
+
+            
+
+        </ul>
+
+    </section>
+
+    </div>
+
+  
+
+  </article>
+
+  
+
+</article>
+
+<!-- content end -->
+
+
+
+
+
+
+
+<!-- footer start -->
+
+
+
+{template "wap","footer"}
+
+
+
+
+

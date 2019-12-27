@@ -1,0 +1,86 @@
+{template "content","header"}
+
+<div class="n_main_box">
+	<div class="main_box">
+{template "content","left"}
+    <div class="n_right">
+      <div class="n_title">
+             <h1>{$CATEGORYS[$catid][catname]}</h1>
+            <div class="position">
+                <strong>当前位置：</strong>
+                <a href="{siteurl($siteid)}" title="">首页</a> {catpos($catid)}
+            </div>
+        </div>
+        
+        <div class="n_search_box">
+          <dl>
+              <dt>品牌筛选</dt>
+                <dd>
+            
+
+            {php $options = get_zdy_value(3,'pinpai')}
+            {php $pp = $_GET['pp']}
+            <a {if $pp==""}class="on"{/if} href="{diy_top_link($catid)}">全部</a>
+            <?php
+
+              foreach($options as $_k) {
+
+                $v = explode("|",$_k);
+
+                $k = trim($v[1]);
+
+                $option[$k] = $v[0];
+
+                if($k==$pp){
+
+                $class = 'class="on"';
+
+                }else{
+
+                 $class = 'class=""';
+
+                }
+
+                echo "<i>|</i><a href=".diy_top_link($catid)."&pp=".$k." ".$class.">".$option[$k]."</a>";
+
+              }
+
+            ?>
+
+                </dd>
+            </dl>
+        </div>
+
+      	<div class="n_content">
+        	<div class="n_product ">
+         
+                 
+                <ul>
+{pc:content action="lists" catid="$catid" pinpai="$pp" num="9" order="listorder DESC" page="$page"}
+{loop $data $r}
+<li> <a href="{$r['url']}" title="{$r['title']}" target="_blank"> <img src="{$r['thumb']}" /> <span>{str_cut($r['title'],50,'')}</span> </a> </li>
+
+{/loop}
+{/pc}
+
+                  <div class="clear"></div>
+                </ul>
+            
+           <div class="page" id="pages"> 
+            {$pages}
+           </div>
+       		<div class="clear"></div>
+          </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--=============================================content_end=============================================-->
+
+      {loop $pictureurls $pic_k $r}
+       <li><div class="img-wrap"><a href="javascript:;" hidefocus="true"><img src="{thumb($r[url], 100, 137, 0)}" alt="{$r[alt]}" rel="{$r[url]}"/></a></div></li>
+      {/loop}
+<!--=============================================footer=============================================-->
+{template "content","footer"}

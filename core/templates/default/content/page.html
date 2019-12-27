@@ -1,0 +1,27 @@
+{template "content","header"}
+<!--=============================================header=============================================-->
+<!--=============================================n_content=============================================-->
+
+
+
+<div class="clear"></div>
+
+<div class="n_main_box">
+
+    <div class="n_title">
+        <h2> {$CATEGORYS[$catid][catname_en]}</h2>
+        <h1> {$CATEGORYS[$catid][catname]}</h1>
+    </div>
+    <div class="n_content">
+        <div class="main_box">
+            <div class="article">
+                {$content}
+            
+            </div>  
+        </div>
+    </div>
+</div>
+
+<!--============================footer============================= -->
+<!--============================footer============================= -->
+{template "content","footer"}

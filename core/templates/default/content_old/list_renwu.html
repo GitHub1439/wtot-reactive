@@ -1,0 +1,52 @@
+{template "content","header"}
+
+<div class="n_main_box">
+  <div class="main_box">
+{template "content","left"}
+    <div class="n_right">
+       <div class="n_title">
+             <h1>{$CATEGORYS[$catid][catname]}</h1>
+            <div class="position">
+                <strong>当前位置：</strong>
+                <a href="{siteurl($siteid)}/index.php" title="">首页</a>{catpos($catid)}
+            </div>
+        </div>
+        <div class="n_content">
+          <div class="n_team"> 
+              <ul>
+{pc:content action="lists" catid="$catid" num="5" order="listorder DESC" page="$page"}
+
+{loop $data $r}
+
+                  <li>
+                      <a href="{$r['url']}" title="" class="fl"><img class="img" src="{$r['thumb']}" width="155" height="110"  alt="" /></a>
+                      <div class="fr">
+                          <h1><a href="{$r['url']}" title="{$r['title']}">{$r['title']}</a></h1>
+                          <p>
+                           {str_cut($r['description'],450,'...')}
+                          </p>
+                          <a href="{$r['url']}" class="more">查看详细</a>
+                      </div>
+                      <div class="clear"></div>
+                  </li>
+
+{/loop}
+{/pc}
+
+              </ul>
+        </div>
+              <div class="page" id="pages"> 
+            {$pages}
+           </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--=============================================content_end=============================================-->
+
+
+
+<!--===============================footer====================================-->
+{template "content","footer"}

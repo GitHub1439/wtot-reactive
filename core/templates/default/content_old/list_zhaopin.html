@@ -1,0 +1,57 @@
+{template "content","header"}
+
+<div class="n_main_box">
+  <div class="main_box">
+{template "content","left"}
+    <div class="n_right">
+       <div class="n_title">
+             <h1>{$CATEGORYS[$catid][catname]}</h1>
+            <div class="position">
+                <strong>当前位置：</strong>
+                <a href="{siteurl($siteid)}/index.php" title="">首页</a>{catpos($catid)}
+            </div>
+        </div>
+        <div class="n_content">
+          <div class="n_contact">
+            <div class="n_job ">
+          <div class="up">
+          <div id="list_slide">
+{pc:content action="lists" catid="$catid" num="20" order="listorder DESC" moreinfo="1"}
+
+{loop $data $r}
+  <dl>
+                <dt class="on">
+                
+                   <h1>{$r['title']}</h1> 
+                </dt>
+                <dd style="display:block;">
+                    <div class="content article">
+                    
+{$r['content']}
+                     
+                    </div>
+                </dd>
+            </dl>
+
+{/loop}
+{/pc} 
+
+            </div>
+          </div>
+          
+          <div class="clear"></div>
+          
+        </div>
+          </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--=============================================content_end=============================================-->
+
+
+
+<!--===============================footer====================================-->
+{template "content","footer"}

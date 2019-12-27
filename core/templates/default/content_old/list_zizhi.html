@@ -1,0 +1,45 @@
+{template "content","header"}
+
+<div class="n_main_box">
+  <div class="main_box">
+{template "content","left"}
+    <div class="n_right">
+       <div class="n_title">
+             <h1>{$CATEGORYS[$catid][catname]}</h1>
+            <div class="position">
+                <strong>当前位置：</strong>
+                <a href="{siteurl($siteid)}/index.php" title="">首页</a>{catpos($catid)}
+            </div>
+        </div>
+        <div class="n_content">
+          <div class="n_zizhi container">
+          <ul class="gallery">
+{pc:content action="lists" catid="$catid" num="5" order="listorder DESC" page="$page"}
+
+{loop $data $r}
+<li><a href="{$r['thumb']}" title=""><img src="{$r['thumb']}" width="250" height="165" alt="" /> </a></li>
+{/loop}
+{/pc}
+    
+            <div class="clear"></div>
+          </ul>
+          <script type="text/javascript" src="{JS_PATH}zizhi.js"></script>
+
+         <div class="page" id="pages"> 
+            {$pages}
+           </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--=============================================content_end=============================================-->
+
+
+<!--=============================================footer=============================================-->
+
+<!--===============================footer====================================-->
+{template "content","footer"}

@@ -1,0 +1,44 @@
+/*可以在这里添加你自己的css*/
+.view { height: 97%; }
+/*可以在这里添加你自己的css*/
+*{font-family:Arial, Helvetica,"宋体", sans-serif; padding: 0; margin: auto;}
+html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video { margin:0; padding:0; border:0;  outline:0; vertical-align:baseline; background:transparent;}
+
+html,body{ width:100%; position:relative; overflow-x:hidden; }
+html {font-size: 62.5%;}
+html{ -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; -webkit-text-size-adjust: none; background-attachment: fixed; background-repeat: no-repeat; background-position: center center;}
+body {font-size: 1.6rem; /* =16px */}
+::selection{  background:#0aa284;  color:#fff;}  
+::-moz-selection {  background:#0aa284;  color:#fff;  }  
+::-webkit-selection {  background:#0aa284;  color:#fff;  } 
+h1,h2,h3,h4,h5,h6,strong{ font-weight:bold;}
+a,input,img,:focus{ mayfish:expression(this.onfocus=this.blur);cursor:handbblr:expression(this.onFocus=this.blur());/*IE使用*/ outline-style:none;/*FF使用*/ } /*去除a标签带来的虚框*/ 
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}
+ul,li{list-style:none}
+blockquote,q{quotes:none}
+blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
+a{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;background:0 0}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:700}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted #000;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+input,select{vertical-align:middle}
+input {  padding: 0 5px;  vertical-align: middle;  line-height: normal;  }  
+
+/*css定义超链接四个状态也有顺序的。*/   
+a:link, a:visited { text-decoration: none; cursor:pointer !important; color: #787878; }  
+a:hover, a:active {  border: none; text-decoration:underline;  }  
+
+body{font-size:14px; color:#787878; line-height:30px;background-color: #fff;margin: 0;}
+p{font-size:14px; color:#787878; line-height:30px; padding-bottom: 15px; margin: 0;}
+h1,h2,h3,h4,h5,h6{ font-weight:bold;}
+td p th p{ padding:0; margin:0; }
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}

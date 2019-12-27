@@ -1,0 +1,56 @@
+{template "wap","header"}
+
+<!-- header end -->
+
+
+
+<article class="main_box nr_content">
+
+   <section class="n_article">
+
+    <div class="ar_title">
+
+      <h1>{$title}</h1>
+
+      <h3>发表时间：{date('Y-m-d',strtotime($inputtime))}</h3>
+
+    </div>
+
+    <article class="ar_content j_article">
+
+ {$content}
+
+
+
+    </article>
+
+    <div class="ar_fot" style="text-align: center;">
+
+        <a class="color"  href="{diy_top_link($catid)}"><i class="j_iconfont color" >&#xe649;</i>返回栏目</a>
+
+    </div>
+
+  </section>
+
+</article>
+
+
+
+
+
+<!-- content end -->
+
+
+
+
+
+<!-- footer start -->
+
+
+
+{template "wap","footer"}
+
+
+
+
+

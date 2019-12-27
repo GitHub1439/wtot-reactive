@@ -1,0 +1,31 @@
+    <div class="n_left">
+      <div class="up">
+        <div class="title">
+            <h1>{$CATEGORYS[$tid][catname]}</h1>
+        </div>
+        <div class="content">
+          <ul>
+            {php $arrparentid = explode(",", $CAT[arrparentid])}
+            {if subcat($tid)}
+            {loop subcat($tid) $r}
+            <li {if in_array($r[catid], $arrparentid) || $r[catid]==$catid} class="on"{/if}><a href="{$r[trueurl]}" >{$r[catname]}</a><span></span></li>
+            {/loop}
+            {else}
+            <li class="on"><a href="{$CATEGORYS[$catid][trueurl]}" title="">{$CATEGORYS[$catid][catname]}</a><span></span></li>
+            {/if}
+          </ul>
+        </div>
+      </div>
+      <div class="md">
+        <h1>快捷通道</h1>
+        <a class="li1" href="{diy_top_link(13)}"><strong>党群建设</strong><span>Political Party</span></a>
+        <a class="li2" href="{diy_top_link(48)}"><strong>我要合作</strong><span>I want to cooperate</span></a>
+      </div>
+      <div class="un">
+        <div class="title">联系方式</div>
+        <div  class="content">
+ {pc:block pos="left_contact"}{/pc}
+
+        </div>
+      </div>
+    </div>

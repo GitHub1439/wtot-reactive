@@ -1,0 +1,41 @@
+{template "content","header"}
+<div class="n_banner"> <a href="" title="" style="background:url({IMG_PATH}n_banner.jpg) center top no-repeat;"></a> </div>
+<!--============================================content-start======================-->
+<div class="n_main">
+
+  <div class="main_box">
+    <div class="n_title">
+    <h1><a href="{siteurl($siteid)}/index.php" title="">首页</a>  <i>&gt;</i> <span>站内搜索</span></h1>
+    </div>
+    <div class="n_content">
+      <div class="n_news">
+        <div class="up">
+        <ul>
+    {loop $data_ss $i $r}
+   {php $inputtime=format::date($r[inputtime], 1);}
+    {php $shijian=date('Y-m-d',strtotime($inputtime))}
+       <li>
+                     <h1><a href="{$r[url]}" target="_blank" title="">{$r[title]}</a></h1>   
+                     <div class="text_box">
+                         <span>{date('Y-m-d',$r[inputtime])}</span>
+                         <p>
+                       {$r[description]}
+                         </p>
+                         <a href="{$r[url]}" target="_blank" title="" class="more">查看详细..</a>
+                     </div>
+                </li>
+    {/loop}
+    {if empty($data)}未找到结果{/if} 
+                <div class="clear"></div>
+            </ul>
+        
+      </div>
+         <div class="page" id="pages" >
+                    {$pages}
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--==================footer================-->
+{template "content","footer"}

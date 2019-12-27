@@ -1,0 +1,66 @@
+<script type="text/javascript" src="{JS_PATH}laydate.js"></script>
+
+ <style type="text/css">
+  #vango_bar{width: 100%; height: 55px;line-height: 55px; background:#373737 ; position: relative; z-index: 99999 !important;}
+  #vango_bar .box{ position: relative;}
+  #vango_bar .logo_box a{ display: block; width: 300px; background: url({IMG_PATH}logo_test.png) 20px center no-repeat; height: 55px;}
+  #vango_bar .time_box{ position: absolute;right: 20px; top: 0; padding-left: 60px;  background: url({IMG_PATH}bg_time.png) 0px center no-repeat; height: 55px; }
+  #vango_bar .time_box h1{font-size: 12px; color: #cfd0d6; display: block;}
+  #vango_bar .time_box h1 .time{font-size: 18px; color: #f00; font-weight: normal;}
+  #vango_bar .time_box ul{ display: inline; }
+  #vango_bar .time_box li{ display: inline; }
+</style>
+ 
+<div id="vango_bar" >
+  <div class="box">
+      <div class="logo_box">
+          <a></a>
+       </div>
+       <div class="time_box">
+        <h1>网站测试时间剩余：
+  <ul>
+    <li id="d" class="time"></li>
+    <li class="info">天</li>
+    <li id="h" class="time"></li>
+    <li class="info">小时</li>
+<!--     <li id="i" class="time"></li>
+    <li class="info">分</li>
+    <li id="s" class="time"></li>
+    <li class="info">秒</li> -->
+  </ul>
+        </h1>
+       </div>
+    </div>
+       
+<script>
+window.onload = test();
+  function test(){
+    // 当前时间
+    var nowTime = new Date().getTime();
+    // 2016/12/22 hh:mm:ee
+    // 结束时间
+    var endTime = new Date('{shiyong_date()}');
+
+    // 相差的时间  
+    var t = endTime.getTime() - nowTime;
+
+    if(t<=0){
+      window.location.href="{APP_PATH}overdue.html"; 
+    }
+
+    var d = Math.floor(t/1000/60/60/24);
+    
+    var h = Math.floor(t/1000/60/60%24);
+    var i = Math.floor(t/1000/60%60);
+    var s = Math.floor(t/1000%60);
+
+    document.getElementById('d').innerHTML = d;
+    document.getElementById('h').innerHTML = h;
+    // document.getElementById('i').innerHTML = i;
+    // document.getElementById('s').innerHTML = s;
+
+    setTimeout(test, 1000);
+  }
+
+</script>
+</div>
